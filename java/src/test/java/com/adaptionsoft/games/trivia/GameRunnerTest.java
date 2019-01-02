@@ -13,7 +13,7 @@ public class GameRunnerTest {
 
 	@Test
 	public void can_run_a_game() throws Exception {
-		Integer[] seeds = new Integer[]{3};
+		Integer[] seeds = new Integer[]{3, 5};
 		Approvals.verifyAll(seeds, this::runGame);
 	}
 
