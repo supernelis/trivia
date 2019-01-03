@@ -6,6 +6,7 @@ import java.util.*;
 import static com.adaptionsoft.games.uglytrivia.Category.*;
 
 public class Game {
+    public static final int NUMBER_OF_CELLS = 12;
     ArrayList players = new ArrayList();
     int[] places = new int[6];
     int[] purses = new int[6];
@@ -47,8 +48,7 @@ public class Game {
                 isGettingOutOfPenaltyBox = true;
 
                 printer().println(players.get(currentPlayer) + " is getting out of the penalty box");
-                places[currentPlayer] = currentPlayerPosition() + roll;
-                if (currentPlayerPosition() > 11) places[currentPlayer] = currentPlayerPosition() - 12;
+                movePlayer(roll);
 
                 printer().println(players.get(currentPlayer)
                         + "'s new location is "
@@ -62,8 +62,7 @@ public class Game {
 
         } else {
 
-            places[currentPlayer] = currentPlayerPosition() + roll;
-            if (currentPlayerPosition() > 11) places[currentPlayer] = currentPlayerPosition() - 12;
+            movePlayer(roll);
 
             printer().println(players.get(currentPlayer)
                     + "'s new location is "
@@ -72,6 +71,12 @@ public class Game {
             askQuestion();
         }
 
+    }
+
+    private void movePlayer(int roll) {
+        places[currentPlayer] = currentPlayerPosition() + roll;
+        if (currentPlayerPosition() >= NUMBER_OF_CELLS)
+            places[currentPlayer] = currentPlayerPosition() - NUMBER_OF_CELLS;
     }
 
     private void askQuestion() {
