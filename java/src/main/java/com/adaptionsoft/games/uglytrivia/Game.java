@@ -4,7 +4,7 @@ import java.io.PrintStream;
 import java.util.*;
 
 public class Game {
-    ArrayList players = new ArrayList();
+    ArrayList<String> players = new ArrayList<>();
     int[] places = new int[6];
     int[] purses = new int[6];
     boolean[] inPenaltyBox = new boolean[6];
@@ -39,23 +39,23 @@ public class Game {
     }
 
     public void roll(int roll) {
-        printer().println(players.get(currentPlayer) + " is the current player");
+        printer().println(currentPlayer() + " is the current player");
         printer().println("They have rolled a " + roll);
 
         if (inPenaltyBox[currentPlayer]) {
             if (roll % 2 != 0) {
                 isGettingOutOfPenaltyBox = true;
 
-                printer().println(players.get(currentPlayer) + " is getting out of the penalty box");
+                printer().println(currentPlayer() + " is getting out of the penalty box");
                 movePlayer(roll);
 
-                printer().println(players.get(currentPlayer)
+                printer().println(currentPlayer()
                         + "'s new location is "
                         + currentPlayerPosition());
                 printer().println("The category is " + currentCategory());
                 askQuestion();
             } else {
-                printer().println(players.get(currentPlayer) + " is not getting out of the penalty box");
+                printer().println(currentPlayer() + " is not getting out of the penalty box");
                 isGettingOutOfPenaltyBox = false;
             }
 
@@ -63,13 +63,17 @@ public class Game {
 
             movePlayer(roll);
 
-            printer().println(players.get(currentPlayer)
+            printer().println(currentPlayer()
                     + "'s new location is "
                     + currentPlayerPosition());
             printer().println("The category is " + currentCategory());
             askQuestion();
         }
 
+    }
+
+    private String currentPlayer() {
+        return players.get(currentPlayer);
     }
 
     private void movePlayer(int roll) {
@@ -94,7 +98,7 @@ public class Game {
             if (isGettingOutOfPenaltyBox) {
                 printer().println("Answer was correct!!!!");
                 purses[currentPlayer]++;
-                printer().println(players.get(currentPlayer)
+                printer().println(currentPlayer()
                         + " now has "
                         + purses[currentPlayer]
                         + " Gold Coins.");
@@ -115,7 +119,7 @@ public class Game {
 
             printer().println("Answer was corrent!!!!");
             purses[currentPlayer]++;
-            printer().println(players.get(currentPlayer)
+            printer().println(currentPlayer()
                     + " now has "
                     + purses[currentPlayer]
                     + " Gold Coins.");
@@ -130,7 +134,7 @@ public class Game {
 
     public boolean wrongAnswer() {
         printer().println("Question was incorrectly answered");
-        printer().println(players.get(currentPlayer) + " was sent to the penalty box");
+        printer().println(currentPlayer() + " was sent to the penalty box");
         inPenaltyBox[currentPlayer] = true;
 
         currentPlayer++;
