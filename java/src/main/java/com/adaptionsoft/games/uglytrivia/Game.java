@@ -74,9 +74,15 @@ public class Game {
     }
 
     private void movePlayer(int roll) {
-        places[currentPlayer] = currentPlayerPosition() + roll;
-        if (currentPlayerPosition() >= NUMBER_OF_CELLS)
-            places[currentPlayer] = currentPlayerPosition() - NUMBER_OF_CELLS;
+        places[currentPlayer] = nextPosition(currentPlayerPosition(), roll);
+    }
+
+    private static int nextPosition(int currentPosition, int roll) {
+        int newPosition = currentPosition + roll;
+        if (newPosition >= NUMBER_OF_CELLS) {
+            newPosition = newPosition - NUMBER_OF_CELLS;
+        }
+        return newPosition;
     }
 
     private void askQuestion() {
