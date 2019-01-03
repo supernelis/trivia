@@ -5,7 +5,6 @@ import java.util.*;
 
 public class Game {
     List<Player> players = new ArrayList<>();
-    int[] places = new int[6];
     int[] purses = new int[6];
     boolean[] inPenaltyBox = new boolean[6];
 
@@ -22,7 +21,6 @@ public class Game {
 
     public void add(String playerName) {
         players.add(new Player(playerName));
-        places[howManyPlayers()] = 0;
         purses[howManyPlayers()] = 0;
         inPenaltyBox[howManyPlayers()] = false;
 
@@ -77,7 +75,8 @@ public class Game {
     }
 
     private void movePlayer(int roll) {
-        places[currentPlayer] = board.nextPosition(currentPlayerPosition(), roll);
+        int newPosition = board.nextPosition(currentPlayerPosition(), roll);
+        currentPlayer().moveTo(newPosition);
     }
 
     private void askQuestion() {
@@ -90,7 +89,7 @@ public class Game {
     }
 
     private int currentPlayerPosition() {
-        return places[currentPlayer];
+        return currentPlayer().position();
     }
 
     public boolean wasCorrectlyAnswered() {
