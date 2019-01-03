@@ -13,30 +13,11 @@ public class Game {
 
     int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
-    private final Map<Category, LinkedList<String>> questionsForCategory;
+
+    private final QuestionsDeck questionsDeck;
 
     public Game() {
-        LinkedList<String> popQuestions = new LinkedList<>();
-        LinkedList<String> scienceQuestions = new LinkedList<>();
-        LinkedList<String> sportsQuestions = new LinkedList<>();
-        LinkedList<String> rockQuestions = new LinkedList<>();
-
-        for (int i = 0; i < 50; i++) {
-            popQuestions.addLast("Pop Question " + i);
-            scienceQuestions.addLast(("Science Question " + i));
-            sportsQuestions.addLast(("Sports Question " + i));
-            rockQuestions.addLast(createRockQuestion(i));
-        }
-
-        questionsForCategory = new HashMap<>();
-        questionsForCategory.put(POP, popQuestions);
-        questionsForCategory.put(SCIENCE, scienceQuestions);
-        questionsForCategory.put(SPORTS, sportsQuestions);
-        questionsForCategory.put(ROCK, rockQuestions);
-    }
-
-    public String createRockQuestion(int index) {
-        return "Rock Question " + index;
+        questionsDeck = new QuestionsDeck();
     }
 
     public void add(String playerName) {
@@ -66,12 +47,12 @@ public class Game {
                 isGettingOutOfPenaltyBox = true;
 
                 printer().println(players.get(currentPlayer) + " is getting out of the penalty box");
-                places[currentPlayer] = currentPlayerPlace() + roll;
-                if (currentPlayerPlace() > 11) places[currentPlayer] = currentPlayerPlace() - 12;
+                places[currentPlayer] = currentPlayerPosition() + roll;
+                if (currentPlayerPosition() > 11) places[currentPlayer] = currentPlayerPosition() - 12;
 
                 printer().println(players.get(currentPlayer)
                         + "'s new location is "
-                        + currentPlayerPlace());
+                        + currentPlayerPosition());
                 printer().println("The category is " + currentCategory().value());
                 askQuestion();
             } else {
@@ -81,12 +62,12 @@ public class Game {
 
         } else {
 
-            places[currentPlayer] = currentPlayerPlace() + roll;
-            if (currentPlayerPlace() > 11) places[currentPlayer] = currentPlayerPlace() - 12;
+            places[currentPlayer] = currentPlayerPosition() + roll;
+            if (currentPlayerPosition() > 11) places[currentPlayer] = currentPlayerPosition() - 12;
 
             printer().println(players.get(currentPlayer)
                     + "'s new location is "
-                    + currentPlayerPlace());
+                    + currentPlayerPosition());
             printer().println("The category is " + currentCategory().value());
             askQuestion();
         }
@@ -94,15 +75,15 @@ public class Game {
     }
 
     private void askQuestion() {
-        LinkedList<String> currentQuestions = questionsForCategory.get(currentCategory());
-        printer().println(currentQuestions.removeFirst());
+        String question = questionsDeck.pickQuestionFor(currentPlayerPosition());
+        printer().println(question);
     }
 
     private Category currentCategory() {
-        return categoryFor(currentPlayerPlace());
+        return categoryFor(currentPlayerPosition());
     }
 
-    private int currentPlayerPlace() {
+    private int currentPlayerPosition() {
         return places[currentPlayer];
     }
 
