@@ -2,10 +2,7 @@ package com.adaptionsoft.games.uglytrivia;
 
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
-import static com.adaptionsoft.games.uglytrivia.Category.categoryFor;
 import static com.adaptionsoft.games.uglytrivia.Category.values;
 import static java.util.stream.Collectors.toCollection;
 import static java.util.stream.IntStream.range;
@@ -22,8 +19,8 @@ public class QuestionsDeck {
         }
     }
 
-    public String pickQuestionFor(int position) {
-        LinkedList<String> currentQuestions = questionsForCategory.get(categoryFor(position));
+    public String pickQuestionFor(Category category) {
+        LinkedList<String> currentQuestions = questionsForCategory.get(category);
         return currentQuestions.removeFirst();
     }
 

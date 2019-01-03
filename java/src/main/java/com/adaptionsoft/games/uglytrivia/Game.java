@@ -78,15 +78,11 @@ public class Game {
     }
 
     private static int nextPosition(int currentPosition, int roll) {
-        int newPosition = currentPosition + roll;
-        if (newPosition >= NUMBER_OF_CELLS) {
-            newPosition = newPosition - NUMBER_OF_CELLS;
-        }
-        return newPosition;
+        return (currentPosition + roll) % NUMBER_OF_CELLS;
     }
 
     private void askQuestion() {
-        String question = questionsDeck.pickQuestionFor(currentPlayerPosition());
+        String question = questionsDeck.pickQuestionFor(currentCategory());
         printer().println(question);
     }
 
