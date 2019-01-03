@@ -6,17 +6,14 @@ public enum Category {
     SPORTS("Sports"),
     ROCK("Rock");
 
-    private String value;
+    private String name;
 
-    Category(String value) {
-        this.value = value;
+    Category(String name) {
+        this.name = name;
     }
 
-    static Category categoryFor(int position) {
-        return Category.values()[position % values().length];
-    }
-
-    public String value() {
-        return value;
+    @Override
+    public String toString() {
+        return name;
     }
 }

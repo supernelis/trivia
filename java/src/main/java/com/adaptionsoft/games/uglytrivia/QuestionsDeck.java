@@ -26,7 +26,7 @@ public class QuestionsDeck {
 
     private LinkedList<String> makeQuestionsFor(Category category) {
         return range(0, QUESTIONS_PER_CATEGORY).boxed()
-                .map(questionNumber -> category.value() + " Question " + questionNumber)
+                .map(questionNumber -> category + " Question " + questionNumber)
                 .collect(toCollection(LinkedList::new));
     }
 }

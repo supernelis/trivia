@@ -3,8 +3,6 @@ package com.adaptionsoft.games.uglytrivia;
 import java.io.PrintStream;
 import java.util.*;
 
-import static com.adaptionsoft.games.uglytrivia.Category.*;
-
 public class Game {
     ArrayList players = new ArrayList();
     int[] places = new int[6];
@@ -54,7 +52,7 @@ public class Game {
                 printer().println(players.get(currentPlayer)
                         + "'s new location is "
                         + currentPlayerPosition());
-                printer().println("The category is " + currentCategory().value());
+                printer().println("The category is " + currentCategory());
                 askQuestion();
             } else {
                 printer().println(players.get(currentPlayer) + " is not getting out of the penalty box");
@@ -68,7 +66,7 @@ public class Game {
             printer().println(players.get(currentPlayer)
                     + "'s new location is "
                     + currentPlayerPosition());
-            printer().println("The category is " + currentCategory().value());
+            printer().println("The category is " + currentCategory());
             askQuestion();
         }
 
@@ -84,7 +82,7 @@ public class Game {
     }
 
     private Category currentCategory() {
-        return categoryFor(currentPlayerPosition());
+        return board.categoryFor(currentPlayerPosition());
     }
 
     private int currentPlayerPosition() {
