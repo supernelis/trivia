@@ -6,7 +6,6 @@ import java.util.*;
 import static com.adaptionsoft.games.uglytrivia.Category.*;
 
 public class Game {
-    public static final int NUMBER_OF_CELLS = 12;
     ArrayList players = new ArrayList();
     int[] places = new int[6];
     int[] purses = new int[6];
@@ -16,9 +15,11 @@ public class Game {
     boolean isGettingOutOfPenaltyBox;
 
     private final QuestionsDeck questionsDeck;
+    private final Board board;
 
     public Game() {
         questionsDeck = new QuestionsDeck();
+        board = new Board();
     }
 
     public void add(String playerName) {
@@ -74,11 +75,7 @@ public class Game {
     }
 
     private void movePlayer(int roll) {
-        places[currentPlayer] = nextPosition(currentPlayerPosition(), roll);
-    }
-
-    private static int nextPosition(int currentPosition, int roll) {
-        return (currentPosition + roll) % NUMBER_OF_CELLS;
+        places[currentPlayer] = board.nextPosition(currentPlayerPosition(), roll);
     }
 
     private void askQuestion() {
