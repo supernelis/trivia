@@ -60,12 +60,12 @@ public class Game {
                 isGettingOutOfPenaltyBox = true;
 
                 printer().println(players.get(currentPlayer) + " is getting out of the penalty box");
-                places[currentPlayer] = places[currentPlayer] + roll;
-                if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
+                places[currentPlayer] = currentPlayerPlace() + roll;
+                if (currentPlayerPlace() > 11) places[currentPlayer] = currentPlayerPlace() - 12;
 
                 printer().println(players.get(currentPlayer)
                         + "'s new location is "
-                        + places[currentPlayer]);
+                        + currentPlayerPlace());
                 printer().println("The category is " + currentCategory().value());
                 askQuestion();
             } else {
@@ -75,12 +75,12 @@ public class Game {
 
         } else {
 
-            places[currentPlayer] = places[currentPlayer] + roll;
-            if (places[currentPlayer] > 11) places[currentPlayer] = places[currentPlayer] - 12;
+            places[currentPlayer] = currentPlayerPlace() + roll;
+            if (currentPlayerPlace() > 11) places[currentPlayer] = currentPlayerPlace() - 12;
 
             printer().println(players.get(currentPlayer)
                     + "'s new location is "
-                    + places[currentPlayer]);
+                    + currentPlayerPlace());
             printer().println("The category is " + currentCategory().value());
             askQuestion();
         }
@@ -99,16 +99,11 @@ public class Game {
     }
 
     private Category currentCategory() {
-        if (places[currentPlayer] == 0) return POP;
-        if (places[currentPlayer] == 4) return POP;
-        if (places[currentPlayer] == 8) return POP;
-        if (places[currentPlayer] == 1) return SCIENCE;
-        if (places[currentPlayer] == 5) return SCIENCE;
-        if (places[currentPlayer] == 9) return SCIENCE;
-        if (places[currentPlayer] == 2) return SPORTS;
-        if (places[currentPlayer] == 6) return SPORTS;
-        if (places[currentPlayer] == 10) return SPORTS;
-        return ROCK;
+        return categoryFor(currentPlayerPlace());
+    }
+
+    private int currentPlayerPlace() {
+        return places[currentPlayer];
     }
 
     public boolean wasCorrectlyAnswered() {

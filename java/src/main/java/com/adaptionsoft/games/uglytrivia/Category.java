@@ -12,6 +12,10 @@ public enum Category {
         this.value = value;
     }
 
+    static Category categoryFor(int place) {
+        return Category.values()[place % values().length];
+    }
+
     public String value() {
         return value;
     }
