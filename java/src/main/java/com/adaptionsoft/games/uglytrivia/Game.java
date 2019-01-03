@@ -31,7 +31,7 @@ public class Game {
 		return "Rock Question " + index;
 	}
 
-	public boolean add(String playerName) {
+	public void add(String playerName) {
     	players.add(playerName);
 	    places[howManyPlayers()] = 0;
 	    purses[howManyPlayers()] = 0;
@@ -39,7 +39,6 @@ public class Game {
 	    
 	    printer().println(playerName + " was added");
 	    printer().println("They are player number " + players.size());
-		return true;
 	}
 
 	protected PrintStream printer() {
