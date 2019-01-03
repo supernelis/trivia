@@ -1,8 +1,7 @@
 package com.adaptionsoft.games.uglytrivia;
 
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.*;
 
 import static com.adaptionsoft.games.uglytrivia.Category.*;
 
@@ -12,21 +11,28 @@ public class Game {
     int[] purses = new int[6];
     boolean[] inPenaltyBox = new boolean[6];
 
-    LinkedList popQuestions = new LinkedList();
-    LinkedList scienceQuestions = new LinkedList();
-    LinkedList sportsQuestions = new LinkedList();
-    LinkedList rockQuestions = new LinkedList();
-
     int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
+    private final Map<Category, LinkedList<String>> questionsForCategory;
 
     public Game() {
+        LinkedList<String> popQuestions = new LinkedList<>();
+        LinkedList<String> scienceQuestions = new LinkedList<>();
+        LinkedList<String> sportsQuestions = new LinkedList<>();
+        LinkedList<String> rockQuestions = new LinkedList<>();
+
         for (int i = 0; i < 50; i++) {
             popQuestions.addLast("Pop Question " + i);
             scienceQuestions.addLast(("Science Question " + i));
             sportsQuestions.addLast(("Sports Question " + i));
             rockQuestions.addLast(createRockQuestion(i));
         }
+
+        questionsForCategory = new HashMap<>();
+        questionsForCategory.put(POP, popQuestions);
+        questionsForCategory.put(SCIENCE, scienceQuestions);
+        questionsForCategory.put(SPORTS, sportsQuestions);
+        questionsForCategory.put(ROCK, rockQuestions);
     }
 
     public String createRockQuestion(int index) {
@@ -88,14 +94,8 @@ public class Game {
     }
 
     private void askQuestion() {
-        if (currentCategory() == POP)
-            printer().println(popQuestions.removeFirst());
-        if (currentCategory() == SCIENCE)
-            printer().println(scienceQuestions.removeFirst());
-        if (currentCategory() == SPORTS)
-            printer().println(sportsQuestions.removeFirst());
-        if (currentCategory() == ROCK)
-            printer().println(rockQuestions.removeFirst());
+        LinkedList<String> currentQuestions = questionsForCategory.get(currentCategory());
+        printer().println(currentQuestions.removeFirst());
     }
 
     private Category currentCategory() {
