@@ -4,21 +4,21 @@ import java.util.Random;
 
 import com.adaptionsoft.games.uglytrivia.Game;
 
+import static java.util.Arrays.asList;
+
 
 public class GameRunner {
 
 	private static boolean notAWinner;
 
 	public static void main(String[] args) {
-		run(new Random(), new Game());
+		run(new Random(), new Game(), "Chet", "Pat", "Sue");
 	}
 
-	public static void run(Random random, Game game) {
+	public static void run(Random random, Game game, String... players) {
 		Game aGame = game;
 
-		aGame.add("Chet");
-		aGame.add("Pat");
-		aGame.add("Sue");
+		asList(players).forEach(aGame::add);
 
 		Random rand = random;
 

@@ -26,7 +26,7 @@ public class GameRunnerTest {
 			}
 		};
 
-		GameRunner.run(new Random(seed), game);
+		GameRunner.run(new Random(seed), game, "Chet", "Pat", "Sue");
 
 		return byteArrayOutputStream.toString();
 	}
