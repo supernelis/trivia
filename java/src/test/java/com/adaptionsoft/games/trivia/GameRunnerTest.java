@@ -9,6 +9,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Random;
 
+import static java.util.Arrays.asList;
+
 public class GameRunnerTest {
 
 	@Test
@@ -26,9 +28,27 @@ public class GameRunnerTest {
 			}
 		};
 
-		GameRunner.run(new Random(seed), game, "Chet", "Pat", "Sue");
+		Players players = new Players("Chet", "Pat", "Sue");
+
+		GameRunner.run(new Random(seed), game, players.values());
 
 		return byteArrayOutputStream.toString();
 	}
 
+	private class Players {
+		private String[] players;
+
+		public Players(String ... players) {
+			this.players = players;
+		}
+
+		public String[] values() {
+			return players;
+		}
+
+		@Override
+		public String toString() {
+			return String.join(",", players);
+		}
+	}
 }
