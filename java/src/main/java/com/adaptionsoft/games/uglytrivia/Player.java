@@ -2,11 +2,11 @@ package com.adaptionsoft.games.uglytrivia;
 
 public class Player {
     private final String name;
-    private int position;
+    private int position = 0;
+    private int coins = 0;
 
     public Player(String name) {
         this.name = name;
-        this.position = 0;
     }
 
     public void moveTo(int newPosition) {
@@ -15,6 +15,18 @@ public class Player {
 
     public int position() {
         return position;
+    }
+
+    public void reward() {
+        coins++;
+    }
+
+    public int coins() {
+        return coins;
+    }
+
+    public boolean hasWon() {
+        return coins == 6;
     }
 
     @Override

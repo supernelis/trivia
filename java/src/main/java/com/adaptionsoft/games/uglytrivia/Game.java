@@ -5,7 +5,6 @@ import java.util.*;
 
 public class Game {
     List<Player> players = new ArrayList<>();
-    int[] purses = new int[6];
     boolean[] inPenaltyBox = new boolean[6];
 
     int currentPlayer = 0;
@@ -21,7 +20,6 @@ public class Game {
 
     public void add(String playerName) {
         players.add(new Player(playerName));
-        purses[howManyPlayers()] = 0;
         inPenaltyBox[howManyPlayers()] = false;
 
         printer().println(playerName + " was added");
@@ -96,10 +94,10 @@ public class Game {
         if (inPenaltyBox[currentPlayer]) {
             if (isGettingOutOfPenaltyBox) {
                 printer().println("Answer was correct!!!!");
-                purses[currentPlayer]++;
+                currentPlayer().reward();
                 printer().println(currentPlayer()
                         + " now has "
-                        + purses[currentPlayer]
+                        + currentPlayer().coins()
                         + " Gold Coins.");
 
                 boolean winner = didPlayerWin();
@@ -117,10 +115,10 @@ public class Game {
         } else {
 
             printer().println("Answer was corrent!!!!");
-            purses[currentPlayer]++;
+            currentPlayer().reward();
             printer().println(currentPlayer()
                     + " now has "
-                    + purses[currentPlayer]
+                    + currentPlayer().coins()
                     + " Gold Coins.");
 
             boolean winner = didPlayerWin();
@@ -143,6 +141,6 @@ public class Game {
 
 
     private boolean didPlayerWin() {
-        return !(purses[currentPlayer] == 6);
+        return !currentPlayer().hasWon();
     }
 }
