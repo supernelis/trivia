@@ -41,7 +41,6 @@ public class Game {
                 isGettingOutOfPenaltyBox = false;
                 return;
             }
-
         }
 
         movePlayer(roll);
@@ -72,11 +71,9 @@ public class Game {
                 if (currentPlayer == players.size()) currentPlayer = 0;
                 return true;
             }
-
-
         } else {
 
-            printer().println("Answer was corrent!!!!");
+            printer().println("Answer was correct!!!!");
             currentPlayer().reward();
             printer().println(currentPlayer()
                     + " now has "
