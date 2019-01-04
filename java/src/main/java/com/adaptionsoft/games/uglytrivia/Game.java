@@ -5,11 +5,12 @@ public class Game {
 
     private final QuestionsDeck questionsDeck = new QuestionsDeck();
     private final Board board = new Board();
-    private final Players players = new Players();
+    private final Players players;
     private final Console console;
 
-    public Game(Console console) {
+    public Game(Console console, Players players) {
         this.console = console;
+        this.players = players;
     }
 
     public void add(String playerName) {

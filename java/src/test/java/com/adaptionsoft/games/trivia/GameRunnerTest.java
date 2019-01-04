@@ -3,6 +3,7 @@ package com.adaptionsoft.games.trivia;
 import com.adaptionsoft.games.trivia.runner.GameRunner;
 import com.adaptionsoft.games.uglytrivia.Console;
 import com.adaptionsoft.games.uglytrivia.Game;
+import com.adaptionsoft.games.uglytrivia.Players;
 import org.approvaltests.Approvals;
 import org.approvaltests.combinations.CombinationApprovals;
 import org.junit.Test;
@@ -16,20 +17,20 @@ public class GameRunnerTest {
 	@Test
 	public void can_run_a_game() throws Exception {
 		Integer[] seeds = new Integer[]{3, 5};
-		Approvals.verifyAll(seeds, seed -> runGame(seed, new Players("Chet", "Pat", "Sue")));
+		Approvals.verifyAll(seeds, seed -> runGame(seed, new PlayerList("Chet", "Pat", "Sue")));
 	}
 
 	@Test
 	public void can_run_a_game_with_different_number_of_players() throws Exception {
 		Integer[] seeds = new Integer[]{3, 5};
-		Players[] playersCombination = new Players[] {
-				new Players(),
-				new Players("Chet"),
-				new Players("Chet", "Pat"),
-				new Players("Chet", "Pat", "Sue"),
-				new Players("Chet", "Pat", "Sue", "Fizz"),
-				new Players("Chet", "Pat", "Sue", "Fizz", "Buzz"),
-				new Players("Chet", "Pat", "Sue", "Fizz", "Buzz", "Foo")
+		PlayerList[] playersCombination = new PlayerList[] {
+				new PlayerList(),
+				new PlayerList("Chet"),
+				new PlayerList("Chet", "Pat"),
+				new PlayerList("Chet", "Pat", "Sue"),
+				new PlayerList("Chet", "Pat", "Sue", "Fizz"),
+				new PlayerList("Chet", "Pat", "Sue", "Fizz", "Buzz"),
+				new PlayerList("Chet", "Pat", "Sue", "Fizz", "Buzz", "Foo")
 		};
 
 		CombinationApprovals
@@ -40,20 +41,20 @@ public class GameRunnerTest {
 				);
 	}
 
-	private String runGame(int seed, Players players) {
+	private String runGame(int seed, PlayerList players) {
 		ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 		PrintStream printer = new PrintStream(byteArrayOutputStream, true);
-		Game game = new Game(new Console(printer));
+		Game game = new Game(new Console(printer), new Players());
 
 		GameRunner.run(new Random(seed), game, players.values());
 
 		return byteArrayOutputStream.toString();
 	}
 
-	private class Players {
+	private class PlayerList {
 		private String[] players;
 
-		public Players(String ... players) {
+		public PlayerList(String ... players) {
 			this.players = players;
 		}
 
