@@ -30,8 +30,12 @@ public class Player {
         return coins == 6;
     }
 
-    public void wrongAnswer() {
+    public void entersInPenaltyBox() {
         inPenaltyBox = true;
+    }
+
+    public void exitsPenaltyBox() {
+        inPenaltyBox = false;
     }
 
     public boolean isInPenaltyBox() {

@@ -35,53 +35,21 @@ public class Game {
         if (isInPenaltyBox()) {
             if (roll % 2 != 0) {
                 isGettingOutOfPenaltyBox = true;
-
                 printer().println(currentPlayer() + " is getting out of the penalty box");
-                movePlayer(roll);
-
-                printer().println(currentPlayer()
-                        + "'s new location is "
-                        + currentPlayerPosition());
-                printer().println("The category is " + currentCategory());
-                askQuestion();
             } else {
                 printer().println(currentPlayer() + " is not getting out of the penalty box");
                 isGettingOutOfPenaltyBox = false;
+                return;
             }
 
-        } else {
-
-            movePlayer(roll);
-
-            printer().println(currentPlayer()
-                    + "'s new location is "
-                    + currentPlayerPosition());
-            printer().println("The category is " + currentCategory());
-            askQuestion();
         }
 
-    }
-
-    private Player currentPlayer() {
-        return players.get(currentPlayer);
-    }
-
-    private void movePlayer(int roll) {
-        int newPosition = board.nextPosition(currentPlayerPosition(), roll);
-        currentPlayer().moveTo(newPosition);
-    }
-
-    private void askQuestion() {
-        String question = questionsDeck.pickQuestionFor(currentCategory());
-        printer().println(question);
-    }
-
-    private Category currentCategory() {
-        return board.categoryFor(currentPlayerPosition());
-    }
-
-    private int currentPlayerPosition() {
-        return currentPlayer().position();
+        movePlayer(roll);
+        printer().println(currentPlayer()
+                + "'s new location is "
+                + currentPlayerPosition());
+        printer().println("The category is " + currentCategory());
+        askQuestion();
     }
 
     public boolean wasCorrectlyAnswered() {
@@ -123,20 +91,41 @@ public class Game {
         }
     }
 
-    private boolean isInPenaltyBox() {
-        return currentPlayer().isInPenaltyBox();
-    }
-
     public boolean wrongAnswer() {
         printer().println("Question was incorrectly answered");
         printer().println(currentPlayer() + " was sent to the penalty box");
-        currentPlayer().wrongAnswer();
+        currentPlayer().entersInPenaltyBox();
 
         currentPlayer++;
         if (currentPlayer == players.size()) currentPlayer = 0;
         return true;
     }
 
+    private Player currentPlayer() {
+        return players.get(currentPlayer);
+    }
+
+    private void movePlayer(int roll) {
+        int newPosition = board.nextPosition(currentPlayerPosition(), roll);
+        currentPlayer().moveTo(newPosition);
+    }
+
+    private void askQuestion() {
+        String question = questionsDeck.pickQuestionFor(currentCategory());
+        printer().println(question);
+    }
+
+    private Category currentCategory() {
+        return board.categoryFor(currentPlayerPosition());
+    }
+
+    private int currentPlayerPosition() {
+        return currentPlayer().position();
+    }
+
+    private boolean isInPenaltyBox() {
+        return currentPlayer().isInPenaltyBox();
+    }
 
     private boolean didPlayerWin() {
         return !currentPlayer().hasWon();
