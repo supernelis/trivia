@@ -53,39 +53,25 @@ public class Game {
 
     public boolean wasCorrectlyAnswered() {
         if (isInPenaltyBox()) {
-            if (isGettingOutOfPenaltyBox) {
-                printer().println("Answer was correct!!!!");
-                currentPlayer().reward();
-                printer().println(currentPlayer()
-                        + " now has "
-                        + currentPlayer().coins()
-                        + " Gold Coins.");
-
-                boolean winner = didPlayerWin();
-                currentPlayer++;
-                if (currentPlayer == players.size()) currentPlayer = 0;
-
-                return winner;
-            } else {
+            if (!isGettingOutOfPenaltyBox) {
                 currentPlayer++;
                 if (currentPlayer == players.size()) currentPlayer = 0;
                 return true;
             }
-        } else {
-
-            printer().println("Answer was correct!!!!");
-            currentPlayer().reward();
-            printer().println(currentPlayer()
-                    + " now has "
-                    + currentPlayer().coins()
-                    + " Gold Coins.");
-
-            boolean winner = didPlayerWin();
-            currentPlayer++;
-            if (currentPlayer == players.size()) currentPlayer = 0;
-
-            return winner;
         }
+
+        printer().println("Answer was correct!!!!");
+        currentPlayer().reward();
+        printer().println(currentPlayer()
+                + " now has "
+                + currentPlayer().coins()
+                + " Gold Coins.");
+
+        boolean winner = didPlayerWin();
+        currentPlayer++;
+        if (currentPlayer == players.size()) currentPlayer = 0;
+
+        return winner;
     }
 
     public boolean wrongAnswer() {
