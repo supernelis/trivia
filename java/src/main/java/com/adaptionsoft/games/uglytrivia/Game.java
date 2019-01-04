@@ -55,8 +55,7 @@ public class Game {
 
         if (currentPlayer.isInPenaltyBox()) {
             if (!isGettingOutOfPenaltyBox) {
-                this.currentPlayer++;
-                if (this.currentPlayer == players.size()) this.currentPlayer = 0;
+                nextPlayer();
                 return true;
             }
         }
@@ -65,8 +64,7 @@ public class Game {
         currentPlayer.reward();
         printer().println(currentPlayer + " now has " + currentPlayer.coins() + " Gold Coins.");
 
-        this.currentPlayer++;
-        if (this.currentPlayer == players.size()) this.currentPlayer = 0;
+        nextPlayer();
 
         return !currentPlayer.hasWon();
     }
@@ -76,13 +74,17 @@ public class Game {
         printer().println(currentPlayer() + " was sent to the penalty box");
         currentPlayer().entersInPenaltyBox();
 
-        currentPlayer++;
-        if (currentPlayer == players.size()) currentPlayer = 0;
+        nextPlayer();
         return true;
     }
 
     protected PrintStream printer() {
         return System.out;
+    }
+
+    private void nextPlayer() {
+        currentPlayer++;
+        if (currentPlayer == players.size()) currentPlayer = 0;
     }
 
     private Player currentPlayer() {
