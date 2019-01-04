@@ -2,6 +2,7 @@
 package com.adaptionsoft.games.trivia.runner;
 import java.util.Random;
 
+import com.adaptionsoft.games.uglytrivia.Console;
 import com.adaptionsoft.games.uglytrivia.Game;
 
 import static java.util.Arrays.asList;
@@ -12,7 +13,7 @@ public class GameRunner {
 	private static boolean notAWinner;
 
 	public static void main(String[] args) {
-		run(new Random(), new Game(), "Chet", "Pat", "Sue");
+		run(new Random(), new Game(new Console()), "Chet", "Pat", "Sue");
 	}
 
 	public static void run(Random random, Game game, String... players) {

@@ -1,32 +1,35 @@
 package com.adaptionsoft.games.uglytrivia;
 
-import java.io.PrintStream;
-
 public class Game {
     boolean isGettingOutOfPenaltyBox;
 
     private final QuestionsDeck questionsDeck = new QuestionsDeck();
     private final Board board = new Board();
     private final Players players = new Players();
+    private final Console console;
+
+    public Game(Console console) {
+        this.console = console;
+    }
 
     public void add(String playerName) {
         players.addPlayer(new Player(playerName));
 
-        printer().println(playerName + " was added");
-        printer().println("They are player number " + players.numberOfPlayers());
+        console.print(playerName + " was added");
+        console.print("They are player number " + players.numberOfPlayers());
     }
 
     public void roll(int roll) {
         Player currentPlayer = players.currentPlayer();
-        printer().println(currentPlayer + " is the current player");
-        printer().println("They have rolled a " + roll);
+        console.print(currentPlayer + " is the current player");
+        console.print("They have rolled a " + roll);
 
         if (currentPlayer.isInPenaltyBox()) {
             if (roll % 2 != 0) {
                 isGettingOutOfPenaltyBox = true;
-                printer().println(currentPlayer + " is getting out of the penalty box");
+                console.print(currentPlayer + " is getting out of the penalty box");
             } else {
-                printer().println(currentPlayer + " is not getting out of the penalty box");
+                console.print(currentPlayer + " is not getting out of the penalty box");
                 isGettingOutOfPenaltyBox = false;
                 return;
             }
@@ -34,12 +37,12 @@ public class Game {
 
         int newPosition = board.nextPosition(currentPlayer.position(), roll);
         currentPlayer.moveTo(newPosition);
-        printer().println(currentPlayer + "'s new location is " + newPosition);
+        console.print(currentPlayer + "'s new location is " + newPosition);
 
 
         Category category = board.categoryFor(newPosition);
-        printer().println("The category is " + category);
-        printer().println(questionsDeck.pickQuestionFor(category));
+        console.print("The category is " + category);
+        console.print(questionsDeck.pickQuestionFor(category));
     }
 
     public boolean wasCorrectlyAnswered() {
@@ -52,23 +55,19 @@ public class Game {
             }
         }
 
-        printer().println("Answer was correct!!!!");
+        console.print("Answer was correct!!!!");
         currentPlayer.reward();
-        printer().println(currentPlayer + " now has " + currentPlayer.coins() + " Gold Coins.");
+        console.print(currentPlayer + " now has " + currentPlayer.coins() + " Gold Coins.");
 
         return !currentPlayer.hasWon();
     }
 
     public boolean wrongAnswer() {
-        printer().println("Question was incorrectly answered");
-        printer().println(players.currentPlayer() + " was sent to the penalty box");
+        console.print("Question was incorrectly answered");
+        console.print(players.currentPlayer() + " was sent to the penalty box");
         players.currentPlayer().entersInPenaltyBox();
 
         players.nextPlayer();
         return true;
-    }
-
-    protected PrintStream printer() {
-        return System.out;
     }
 }
