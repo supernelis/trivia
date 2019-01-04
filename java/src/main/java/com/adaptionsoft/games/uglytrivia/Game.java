@@ -5,15 +5,9 @@ import java.io.PrintStream;
 public class Game {
     boolean isGettingOutOfPenaltyBox;
 
-    private final QuestionsDeck questionsDeck;
-    private final Board board;
-    private final Players players;
-
-    public Game() {
-        questionsDeck = new QuestionsDeck();
-        board = new Board();
-        players = new Players();
-    }
+    private final QuestionsDeck questionsDeck = new QuestionsDeck();
+    private final Board board = new Board();
+    private final Players players = new Players();
 
     public void add(String playerName) {
         players.addPlayer(new Player(playerName));
@@ -50,10 +44,10 @@ public class Game {
 
     public boolean wasCorrectlyAnswered() {
         Player currentPlayer = players.currentPlayer();
+        players.nextPlayer();
 
         if (currentPlayer.isInPenaltyBox()) {
             if (!isGettingOutOfPenaltyBox) {
-                players.nextPlayer();
                 return true;
             }
         }
@@ -61,8 +55,6 @@ public class Game {
         printer().println("Answer was correct!!!!");
         currentPlayer.reward();
         printer().println(currentPlayer + " now has " + currentPlayer.coins() + " Gold Coins.");
-
-        players.nextPlayer();
 
         return !currentPlayer.hasWon();
     }
