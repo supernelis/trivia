@@ -4,6 +4,7 @@ public class Player {
     private final String name;
     private int position = 0;
     private int coins = 0;
+    private boolean inPenaltyBox = false;
 
     public Player(String name) {
         this.name = name;
@@ -27,6 +28,14 @@ public class Player {
 
     public boolean hasWon() {
         return coins == 6;
+    }
+
+    public void wrongAnswer() {
+        inPenaltyBox = true;
+    }
+
+    public boolean isInPenaltyBox() {
+        return inPenaltyBox;
     }
 
     @Override
