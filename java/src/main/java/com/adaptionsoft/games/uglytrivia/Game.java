@@ -1,31 +1,29 @@
 package com.adaptionsoft.games.uglytrivia;
 
 import java.io.PrintStream;
-import java.util.*;
 
 public class Game {
-    List<Player> players = new ArrayList<>();
-
-    int currentPlayer = 0;
     boolean isGettingOutOfPenaltyBox;
 
     private final QuestionsDeck questionsDeck;
     private final Board board;
+    private final Players players;
 
     public Game() {
         questionsDeck = new QuestionsDeck();
         board = new Board();
+        players = new Players();
     }
 
     public void add(String playerName) {
-        players.add(new Player(playerName));
+        players.addPlayer(new Player(playerName));
 
         printer().println(playerName + " was added");
-        printer().println("They are player number " + players.size());
+        printer().println("They are player number " + players.numberOfPlayers());
     }
 
     public void roll(int roll) {
-        Player currentPlayer = currentPlayer();
+        Player currentPlayer = players.currentPlayer();
         printer().println(currentPlayer + " is the current player");
         printer().println("They have rolled a " + roll);
 
@@ -51,11 +49,11 @@ public class Game {
     }
 
     public boolean wasCorrectlyAnswered() {
-        Player currentPlayer = currentPlayer();
+        Player currentPlayer = players.currentPlayer();
 
         if (currentPlayer.isInPenaltyBox()) {
             if (!isGettingOutOfPenaltyBox) {
-                nextPlayer();
+                players.nextPlayer();
                 return true;
             }
         }
@@ -64,30 +62,21 @@ public class Game {
         currentPlayer.reward();
         printer().println(currentPlayer + " now has " + currentPlayer.coins() + " Gold Coins.");
 
-        nextPlayer();
+        players.nextPlayer();
 
         return !currentPlayer.hasWon();
     }
 
     public boolean wrongAnswer() {
         printer().println("Question was incorrectly answered");
-        printer().println(currentPlayer() + " was sent to the penalty box");
-        currentPlayer().entersInPenaltyBox();
+        printer().println(players.currentPlayer() + " was sent to the penalty box");
+        players.currentPlayer().entersInPenaltyBox();
 
-        nextPlayer();
+        players.nextPlayer();
         return true;
     }
 
     protected PrintStream printer() {
         return System.out;
-    }
-
-    private void nextPlayer() {
-        currentPlayer++;
-        if (currentPlayer == players.size()) currentPlayer = 0;
-    }
-
-    private Player currentPlayer() {
-        return players.get(currentPlayer);
     }
 }

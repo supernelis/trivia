@@ -1,4 +1,4 @@
-[3, ] => Index: 0, Size: 0 
+[3, ] => No Players! 
 [3, Chet] => Chet was added
 They are player number 1
 Chet is the current player
@@ -838,7 +838,7 @@ Pop Question 6
 Answer was correct!!!!
 Sue now has 6 Gold Coins.
  
-[5, ] => Index: 0, Size: 0 
+[5, ] => No Players! 
 [5, Chet] => Chet was added
 They are player number 1
 Chet is the current player
