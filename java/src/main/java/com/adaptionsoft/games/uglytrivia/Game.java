@@ -47,14 +47,6 @@ public class Game {
     }
 
     public boolean handleAnswer(Answer answer) {
-        if (answer.isCorrect()) {
-            return handleCorrectAnswer();
-        }
-
-        return handleWrongAnswer();
-    }
-
-    private boolean handleCorrectAnswer() {
         Player currentPlayer = players.currentPlayer();
         players.nextPlayer();
 
@@ -62,22 +54,19 @@ public class Game {
             return GAME_ON_GOING;
         }
 
-        console.print("Answer was correct!!!!");
-        currentPlayer.reward();
-        console.print(currentPlayer + " now has " + currentPlayer.coins() + " Gold Coins.");
+        if (answer.isCorrect()) {
+            console.print("Answer was correct!!!!");
+            currentPlayer.reward();
+            console.print(currentPlayer + " now has " + currentPlayer.coins() + " Gold Coins.");
 
-        return !currentPlayer.hasWon();
-    }
-
-    private boolean handleWrongAnswer() {
-        Player currentPlayer = players.currentPlayer();
-        players.nextPlayer();
+            return !currentPlayer.hasWon();
+        }
 
         console.print("Question was incorrectly answered");
         console.print(currentPlayer + " was sent to the penalty box");
 
         currentPlayer.entersInPenaltyBox();
-        
+
         return GAME_ON_GOING;
     }
 
