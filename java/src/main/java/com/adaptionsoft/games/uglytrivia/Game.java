@@ -7,7 +7,7 @@ import java.util.Optional;
 import static java.util.Optional.empty;
 
 public class Game {
-    private static final boolean GAME_ON_GOING = true;
+    public static final boolean GAME_ON_GOING = true;
 
     private final QuestionsDeck questionsDeck = new QuestionsDeck();
     private final Board board = new Board();
@@ -30,6 +30,7 @@ public class Game {
                 console.print(currentPlayer + " is getting out of the penalty box");
             } else {
                 console.print(currentPlayer + " is not getting out of the penalty box");
+                players.nextPlayer();
                 return empty();
             }
         }

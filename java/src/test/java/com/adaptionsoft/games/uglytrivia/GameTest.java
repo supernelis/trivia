@@ -14,12 +14,13 @@ public class GameTest {
     private static final Answer WRONG_ANSWER = new SubbedAnswer(false);
 
     private Player player;
+    private Players players;
     private Game game;
 
     @Before
     public void setUp() throws Exception {
         Console console = new DummyConsole();
-        Players players = new Players();
+        players = new Players();
         player = new Player("Matteo");
         players.addPlayer(player);
         game = new Game(console, players);
@@ -95,6 +96,21 @@ public class GameTest {
         assertFalse(player.isInPenaltyBox());
         assertEquals(4, player.position());
         assertEquals(2, player.coins());
+    }
+
+    @Test
+    public void moves_to_the_next_player_when_the_current_player_is_not_getting_out_of_the_penalty_box() {
+        Player firstPlayer = new Player("First player");
+        Player secondPlayer = new Player("Second player");
+        Players players = new Players();
+        players.addPlayer(firstPlayer);
+        players.addPlayer(secondPlayer);
+        Game game = new Game(new DummyConsole(), players);
+
+        firstPlayer.entersInPenaltyBox();
+        game.roll(2);
+
+        assertEquals(secondPlayer, players.currentPlayer());
     }
 
     private static class SubbedAnswer extends Answer {
