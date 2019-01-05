@@ -44,9 +44,9 @@ public class GameRunnerTest {
 	private String runGame(int seed, PlayerList players) {
 		ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 		PrintStream printer = new PrintStream(byteArrayOutputStream, true);
-		Game game = new Game(new Console(printer), new Players());
+		Console console = new Console(printer);
 
-		GameRunner.run(new Random(seed), game, players.values());
+		GameRunner.run(new Random(seed), console, players.values());
 
 		return byteArrayOutputStream.toString();
 	}

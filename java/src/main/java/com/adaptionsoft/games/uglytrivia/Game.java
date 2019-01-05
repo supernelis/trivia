@@ -13,13 +13,6 @@ public class Game {
         this.players = players;
     }
 
-    public void add(String playerName) {
-        players.addPlayer(new Player(playerName));
-
-        console.print(playerName + " was added");
-        console.print("They are player number " + players.numberOfPlayers());
-    }
-
     public void roll(int roll) {
         Player currentPlayer = players.currentPlayer();
         console.print(currentPlayer + " is the current player");
