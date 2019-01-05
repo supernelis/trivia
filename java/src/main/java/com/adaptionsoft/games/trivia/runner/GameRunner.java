@@ -18,23 +18,19 @@ public class GameRunner {
 	}
 
 	public static void run(Random random, Game game, String... players) {
-		Game aGame = game;
+		asList(players).forEach(game::add);
 
-		asList(players).forEach(aGame::add);
-
-		Random rand = random;
+		Dice dice = new Dice(random);
 
 		do {
 
-			aGame.roll(rand.nextInt(5) + 1);
+			game.roll(dice.roll());
 
-			if (rand.nextInt(9) == 7) {
-				notAWinner = aGame.wrongAnswer();
+			if (random.nextInt(9) == 7) {
+				notAWinner = game.wrongAnswer();
 			} else {
-				notAWinner = aGame.wasCorrectlyAnswered();
+				notAWinner = game.wasCorrectlyAnswered();
 			}
-
-
 
 		} while (notAWinner);
 	}
