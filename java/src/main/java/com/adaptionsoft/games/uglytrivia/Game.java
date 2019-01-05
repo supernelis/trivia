@@ -26,7 +26,7 @@ public class Game {
         console.print("They have rolled a " + roll);
 
         if (currentPlayer.isInPenaltyBox()) {
-            if (roll % 2 != 0) {
+            if (isGettingOutOfPenaltyBox(roll)) {
                 isGettingOutOfPenaltyBox = true;
                 console.print(currentPlayer + " is getting out of the penalty box");
             } else {
@@ -70,5 +70,9 @@ public class Game {
 
         players.nextPlayer();
         return true;
+    }
+
+    private boolean isGettingOutOfPenaltyBox(int roll) {
+        return roll % 2 != 0;
     }
 }
