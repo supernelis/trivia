@@ -37,11 +37,8 @@ public class GameRunner {
 		game.roll(dice.roll());
 
 		Answer answer = answeringService.answer();
-		if (answer.isCorrect()) {
-			return game.wasCorrectlyAnswered();
-		}
 
-		return game.wrongAnswer();
+		return game.handleAnswer(answer);
 	}
 
 	private static Players makePlayersWithNames(String[] playersName, Console console) {

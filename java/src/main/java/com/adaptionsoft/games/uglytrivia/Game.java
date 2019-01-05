@@ -1,5 +1,7 @@
 package com.adaptionsoft.games.uglytrivia;
 
+import com.adaptionsoft.games.trivia.runner.Answer;
+
 import java.util.Optional;
 
 import static java.util.Optional.empty;
@@ -44,6 +46,14 @@ public class Game {
         return Optional.of(question);
     }
 
+    public boolean handleAnswer(Answer answer) {
+        if (answer.isCorrect()) {
+            return wasCorrectlyAnswered();
+        }
+
+        return wrongAnswer();
+    }
+
     public boolean wasCorrectlyAnswered() {
         Player currentPlayer = players.currentPlayer();
         players.nextPlayer();
@@ -60,10 +70,12 @@ public class Game {
     }
 
     public boolean wrongAnswer() {
-        console.print("Question was incorrectly answered");
-        console.print(players.currentPlayer() + " was sent to the penalty box");
+        Player currentPlayer = players.currentPlayer();
+        currentPlayer.entersInPenaltyBox();
 
-        players.currentPlayer().entersInPenaltyBox();
+        console.print("Question was incorrectly answered");
+        console.print(currentPlayer + " was sent to the penalty box");
+
         players.nextPlayer();
 
         return GAME_ON_GOING;
