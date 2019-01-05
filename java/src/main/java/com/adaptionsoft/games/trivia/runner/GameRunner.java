@@ -11,8 +11,6 @@ import static java.util.Arrays.asList;
 
 public class GameRunner {
 
-	private static boolean notAWinner;
-
 	public static void main(String[] args) {
 		run(new Random(), new Game(new Console(), new Players()), "Chet", "Pat", "Sue");
 	}
@@ -21,15 +19,18 @@ public class GameRunner {
 		asList(players).forEach(game::add);
 
 		Dice dice = new Dice(random);
+		AnsweringService answeringService = new AnsweringService(random);
 
+		boolean notAWinner;
 		do {
 
 			game.roll(dice.roll());
 
-			if (random.nextInt(9) == 7) {
-				notAWinner = game.wrongAnswer();
-			} else {
+			Answer answer = answeringService.answer();
+			if (answer.isCorrect()) {
 				notAWinner = game.wasCorrectlyAnswered();
+			} else {
+				notAWinner = game.wrongAnswer();
 			}
 
 		} while (notAWinner);
