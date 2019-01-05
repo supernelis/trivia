@@ -48,13 +48,13 @@ public class Game {
 
     public boolean handleAnswer(Answer answer) {
         if (answer.isCorrect()) {
-            return wasCorrectlyAnswered();
+            return handleCorrectAnswer();
         }
 
-        return wrongAnswer();
+        return handleWrongAnswer();
     }
 
-    public boolean wasCorrectlyAnswered() {
+    private boolean handleCorrectAnswer() {
         Player currentPlayer = players.currentPlayer();
         players.nextPlayer();
 
@@ -69,15 +69,15 @@ public class Game {
         return !currentPlayer.hasWon();
     }
 
-    public boolean wrongAnswer() {
+    private boolean handleWrongAnswer() {
         Player currentPlayer = players.currentPlayer();
-        currentPlayer.entersInPenaltyBox();
+        players.nextPlayer();
 
         console.print("Question was incorrectly answered");
         console.print(currentPlayer + " was sent to the penalty box");
 
-        players.nextPlayer();
-
+        currentPlayer.entersInPenaltyBox();
+        
         return GAME_ON_GOING;
     }
 
