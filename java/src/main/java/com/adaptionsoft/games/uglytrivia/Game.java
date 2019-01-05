@@ -1,6 +1,8 @@
 package com.adaptionsoft.games.uglytrivia;
 
 public class Game {
+    private static final boolean GAME_ON_GOING = true;
+
     boolean isGettingOutOfPenaltyBox;
 
     private final QuestionsDeck questionsDeck = new QuestionsDeck();
@@ -32,8 +34,7 @@ public class Game {
         int newPosition = board.nextPosition(currentPlayer.position(), roll);
         currentPlayer.moveTo(newPosition);
         console.print(currentPlayer + "'s new location is " + newPosition);
-
-
+        
         Category category = board.categoryFor(newPosition);
         console.print("The category is " + category);
         console.print(questionsDeck.pickQuestionFor(category));
@@ -59,10 +60,11 @@ public class Game {
     public boolean wrongAnswer() {
         console.print("Question was incorrectly answered");
         console.print(players.currentPlayer() + " was sent to the penalty box");
-        players.currentPlayer().entersInPenaltyBox();
 
+        players.currentPlayer().entersInPenaltyBox();
         players.nextPlayer();
-        return true;
+
+        return GAME_ON_GOING;
     }
 
     private boolean isGettingOutOfPenaltyBox(int roll) {

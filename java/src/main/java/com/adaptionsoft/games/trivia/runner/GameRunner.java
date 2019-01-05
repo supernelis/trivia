@@ -30,19 +30,18 @@ public class GameRunner {
 	}
 
 	public void run() {
-		boolean notAWinner;
-		do {
+		while (playTurn());
+	}
 
-			game.roll(dice.roll());
+	private boolean playTurn() {
+		game.roll(dice.roll());
 
-			Answer answer = answeringService.answer();
-			if (answer.isCorrect()) {
-				notAWinner = game.wasCorrectlyAnswered();
-			} else {
-				notAWinner = game.wrongAnswer();
-			}
+		Answer answer = answeringService.answer();
+		if (answer.isCorrect()) {
+			return game.wasCorrectlyAnswered();
+		}
 
-		} while (notAWinner);
+		return game.wrongAnswer();
 	}
 
 	private static Players makePlayersWithNames(String[] playersName, Console console) {
