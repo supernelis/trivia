@@ -10,7 +10,7 @@ import static java.util.stream.IntStream.range;
 public class QuestionsDeck {
 
     private static final int QUESTIONS_PER_CATEGORY = 50;
-    private final HashMap<Category, LinkedList<String>> questionsForCategory;
+    private final HashMap<Category, LinkedList<Question>> questionsForCategory;
 
     public QuestionsDeck() {
         questionsForCategory = new HashMap<>();
@@ -19,14 +19,15 @@ public class QuestionsDeck {
         }
     }
 
-    public String pickQuestionFor(Category category) {
-        LinkedList<String> currentQuestions = questionsForCategory.get(category);
+    public Question pickQuestionFor(Category category) {
+        LinkedList<Question> currentQuestions = questionsForCategory.get(category);
         return currentQuestions.removeFirst();
     }
 
-    private LinkedList<String> makeQuestionsFor(Category category) {
+    private LinkedList<Question> makeQuestionsFor(Category category) {
         return range(0, QUESTIONS_PER_CATEGORY).boxed()
                 .map(questionNumber -> category + " Question " + questionNumber)
+                .map(Question::new)
                 .collect(toCollection(LinkedList::new));
     }
 }

@@ -1,5 +1,9 @@
 package com.adaptionsoft.games.uglytrivia;
 
+import java.util.Optional;
+
+import static java.util.Optional.empty;
+
 public class Game {
     private static final boolean GAME_ON_GOING = true;
 
@@ -13,7 +17,7 @@ public class Game {
         this.players = players;
     }
 
-    public void roll(int roll) {
+    public Optional<Question> roll(int roll) {
         Player currentPlayer = players.currentPlayer();
         console.print(currentPlayer + " is the current player");
         console.print("They have rolled a " + roll);
@@ -24,7 +28,7 @@ public class Game {
                 console.print(currentPlayer + " is getting out of the penalty box");
             } else {
                 console.print(currentPlayer + " is not getting out of the penalty box");
-                return;
+                return empty();
             }
         }
 
@@ -34,7 +38,10 @@ public class Game {
 
         Category category = board.categoryFor(newPosition);
         console.print("The category is " + category);
-        console.print(questionsDeck.pickQuestionFor(category));
+
+        Question question = questionsDeck.pickQuestionFor(category);
+        console.print(question.toString());
+        return Optional.of(question);
     }
 
     public boolean wasCorrectlyAnswered() {

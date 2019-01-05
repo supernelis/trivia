@@ -3,6 +3,9 @@ package com.adaptionsoft.games.uglytrivia;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Optional;
+
+import static java.util.Optional.empty;
 import static org.junit.Assert.*;
 
 public class GameTest {
@@ -53,6 +56,26 @@ public class GameTest {
         assertTrue(player.isInPenaltyBox());
         assertEquals(1, player.position());
         assertEquals(0, player.coins());
+    }
+
+    @Test
+    public void player_does_not_get_a_question_when_she_is_in_the_penalty_box() {
+        game.roll(1); // move 1
+        game.wrongAnswer(); // enters in the penalty box
+
+        Optional<Question> question = game.roll(2); // not move 2!!! she is in the penalty box
+
+        assertEquals(empty(), question);
+    }
+
+    @Test
+    public void player_get_a_question_when_she_is_exiting_the_penalty_box() {
+        game.roll(1);
+        game.wrongAnswer();
+
+        Optional<Question> question = game.roll(1);
+
+        assertTrue(question.isPresent());
     }
 
     @Test
