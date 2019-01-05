@@ -3,8 +3,6 @@ package com.adaptionsoft.games.uglytrivia;
 public class Game {
     private static final boolean GAME_ON_GOING = true;
 
-    boolean isGettingOutOfPenaltyBox;
-
     private final QuestionsDeck questionsDeck = new QuestionsDeck();
     private final Board board = new Board();
     private final Players players;
@@ -22,11 +20,10 @@ public class Game {
 
         if (currentPlayer.isInPenaltyBox()) {
             if (isGettingOutOfPenaltyBox(roll)) {
-                isGettingOutOfPenaltyBox = true;
+                currentPlayer.exitsPenaltyBox();
                 console.print(currentPlayer + " is getting out of the penalty box");
             } else {
                 console.print(currentPlayer + " is not getting out of the penalty box");
-                isGettingOutOfPenaltyBox = false;
                 return;
             }
         }
@@ -34,7 +31,7 @@ public class Game {
         int newPosition = board.nextPosition(currentPlayer.position(), roll);
         currentPlayer.moveTo(newPosition);
         console.print(currentPlayer + "'s new location is " + newPosition);
-        
+
         Category category = board.categoryFor(newPosition);
         console.print("The category is " + category);
         console.print(questionsDeck.pickQuestionFor(category));
@@ -45,9 +42,7 @@ public class Game {
         players.nextPlayer();
 
         if (currentPlayer.isInPenaltyBox()) {
-            if (!isGettingOutOfPenaltyBox) {
-                return true;
-            }
+            return GAME_ON_GOING;
         }
 
         console.print("Answer was correct!!!!");
