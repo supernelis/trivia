@@ -2,8 +2,6 @@ package com.adaptionsoft.games.trivia;
 
 import com.adaptionsoft.games.trivia.runner.GameRunner;
 import com.adaptionsoft.games.uglytrivia.Console;
-import com.adaptionsoft.games.uglytrivia.Game;
-import com.adaptionsoft.games.uglytrivia.Players;
 import org.approvaltests.Approvals;
 import org.approvaltests.combinations.CombinationApprovals;
 import org.junit.Test;
@@ -46,7 +44,8 @@ public class GameRunnerTest {
 		PrintStream printer = new PrintStream(byteArrayOutputStream, true);
 		Console console = new Console(printer);
 
-		GameRunner.run(new Random(seed), console, players.values());
+		GameRunner gameRunner = GameRunner.createGameRunner(new Random(seed), console, players.values());
+		gameRunner.run();
 
 		return byteArrayOutputStream.toString();
 	}
