@@ -1,0 +1,22 @@
+{
+  "name": "trivia-javascript",
+  "version": "1.0.0",
+  "description": "trivia game node version",
+  "main": "game.js",
+  "scripts": {
+    "test": "nyc mocha --recursive",
+    "mutation-test": "stryker run"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@stryker-mutator/core": "^1.1.1",
+    "@stryker-mutator/html-reporter": "^1.1.1",
+    "@stryker-mutator/javascript-mutator": "^1.1.1",
+    "@stryker-mutator/mocha-runner": "^1.1.1",
+    "approvals": "^3.0.4",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "nyc": "^13.3.0"
+  }
+}
