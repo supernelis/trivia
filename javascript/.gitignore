@@ -3,4 +3,6 @@ coverage/
 reports/
 .nyc_output/
 
+*.received.*
+
 stryker.log
