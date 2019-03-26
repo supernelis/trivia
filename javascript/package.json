@@ -7,6 +7,14 @@
     "test": "nyc mocha --recursive",
     "mutation-test": "stryker run"
   },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text-summary",
+      "text",
+      "html"
+    ]
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
