@@ -4,7 +4,7 @@
   "description": "trivia game node version",
   "main": "game.js",
   "scripts": {
-    "test": "nyc mocha --recursive",
+    "test": "nyc report --reporter=lcov --reporter=text mocha --recursive",
     "mutation-test": "stryker run"
   },
   "nyc": {
