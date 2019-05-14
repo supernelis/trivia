@@ -18,7 +18,7 @@ var result = "";
 console.log = function (value) {
   result += value + "\n";
 };
-console.log(result);
+console.oldLog(result);
 ```
 
 ## How to save outputs with [Approval](http://approvaltests.com/)
