@@ -1,23 +1,19 @@
-var Game = require("./game.js")
+const reporter = require("./reporter");
+const Dice = require("./dice");
+const Answer = require("./answer");
+const Game = require("./game.js");
 
 module.exports = function () {
-    var notAWinner = false;
+    const dice = new Dice();
+    const game = new Game(reporter);
 
-    var game = new Game();
-
-    game.add('Chet');
-    game.add('Pat');
-    game.add('Sue');
+    ['Chet', 'Pat', 'Sue'].forEach(game.add);
 
     do {
+        game.roll(dice.roll());
+    } while (answer());
 
-        game.roll(Math.floor(Math.random() * 6) + 1);
-
-        if (Math.floor(Math.random() * 10) == 7) {
-            notAWinner = game.wrongAnswer();
-        } else {
-            notAWinner = game.wasCorrectlyAnswered();
-        }
-
-    } while (notAWinner);
-}  
+    function answer() {
+        return game.verify(new Answer());
+    }
+}

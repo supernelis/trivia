@@ -5,7 +5,18 @@ var gameRunner = require("../src/game-runner.js")
 
 describe("The tests", function () {
 	it("should pass", function () {
-		expect(true).to.equal(true);
+		var seed = 1;
+		Math.random = function () {
+			var x = Math.sin(seed++) * 10000;
+			return x - Math.floor(x);
+		}
+		console.oldLog = console.log;
+		var result = "";
+		console.log = function (value) {
+			result += value + "\n";
+		};
+		gameRunner();
+		this.verify(result, { reporters: [] });
 	});
 
 	it("should access game", function () {
