@@ -12,3 +12,9 @@ $ npm test
 ```bash
 $ npm run mutation-test
 ```
+
+## Approve All Mutations
+
+```bash
+$ npm run approve-all
+```
