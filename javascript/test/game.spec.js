@@ -22,6 +22,10 @@ describe("The tests", function () {
 		console.log(result);
 	});
 
+	it("should control the randomness", function(){
+		initialiseRandom(1);
+		expect(Math.floor(Math.random() * 6)).to.eq(4);
+	});
 });
 
 function runGame(){
@@ -35,4 +39,11 @@ function runGame(){
 
     console.log = console.oldLog;
     return result;
+}
+
+function initialiseRandom(seed) {
+    Math.random = function () {
+        var x = Math.sin(seed++) * 10000;
+        return x - Math.floor(x);
+    }
 }
