@@ -15,4 +15,24 @@ describe("The tests", function () {
 	it("should access game runner", function () {
 		expect(gameRunner).to.be.a('function');
 	});
+
+	it("should allow to control the output", function() {
+		var result = runGame();
+		console.log("This is the result");
+		console.log(result);
+	});
+
 });
+
+function runGame(){
+    console.oldLog = console.log;
+    var result = "";
+    console.log = function (value) {
+        result += value + "\n";
+    };
+
+    gameRunner();
+
+    console.log = console.oldLog;
+    return result;
+}
