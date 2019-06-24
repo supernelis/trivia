@@ -10,16 +10,21 @@ public class GameRunner {
 	private static boolean notAWinner;
 
 	public static void main(String[] args) {
-		runGame(new Random());
-
+		Random rand = new Random();
+		runGame(rand);
 	}
 
-	public static void runGame(Random rand) {
+	public static void runGame(Random rand){
+		runGame(rand, "Chet", "Pat", "Sue");
+	}
+
+	public static void runGame(Random rand, String... players) {
 		Game aGame = new Game();
 
-		aGame.add("Chet");
-		aGame.add("Pat");
-		aGame.add("Sue");
+		for (String player:players) {
+			aGame.add(player);
+
+		}
 
 		do {
 
