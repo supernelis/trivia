@@ -67,15 +67,19 @@ public class Game {
 
 		System.out.println(currentPlayerName()
 				+ "'s new location is "
-				+ places[currentPlayerIndex]);
+				+ currentPlayerPosition());
 		System.out.println("The category is " + currentCategory());
 		askQuestion();
 	}
 
+	private int currentPlayerPosition() {
+		return places[currentPlayerIndex];
+	}
+
 	private void move(int roll) {
-		places[currentPlayerIndex] = places[currentPlayerIndex] + roll;
-		if (places[currentPlayerIndex] >= NUMBER_OF_CELLS)
-			places[currentPlayerIndex] = places[currentPlayerIndex] - NUMBER_OF_CELLS;
+		places[currentPlayerIndex] = currentPlayerPosition() + roll;
+		if (currentPlayerPosition() >= NUMBER_OF_CELLS)
+			places[currentPlayerIndex] = currentPlayerPosition() - NUMBER_OF_CELLS;
 	}
 
 	private void askQuestion() {
@@ -91,15 +95,15 @@ public class Game {
 	
 	
 	private Category currentCategory() {
-		if (places[currentPlayerIndex] == 0) return Category.POP;
-		if (places[currentPlayerIndex] == 4) return Category.POP;
-		if (places[currentPlayerIndex] == 8) return Category.POP;
-		if (places[currentPlayerIndex] == 1) return Category.SCIENCE;
-		if (places[currentPlayerIndex] == 5) return Category.SCIENCE;
-		if (places[currentPlayerIndex] == 9) return Category.SCIENCE;
-		if (places[currentPlayerIndex] == 2) return Category.SPORTS;
-		if (places[currentPlayerIndex] == 6) return Category.SPORTS;
-		if (places[currentPlayerIndex] == 10) return Category.SPORTS;
+		if (currentPlayerPosition() == 0) return Category.POP;
+		if (currentPlayerPosition() == 4) return Category.POP;
+		if (currentPlayerPosition() == 8) return Category.POP;
+		if (currentPlayerPosition() == 1) return Category.SCIENCE;
+		if (currentPlayerPosition() == 5) return Category.SCIENCE;
+		if (currentPlayerPosition() == 9) return Category.SCIENCE;
+		if (currentPlayerPosition() == 2) return Category.SPORTS;
+		if (currentPlayerPosition() == 6) return Category.SPORTS;
+		if (currentPlayerPosition() == 10) return Category.SPORTS;
 		return Category.ROCK;
 	}
 
