@@ -1,0 +1,226 @@
+Matteo was added
+They are player number 1
+John was added
+They are player number 2
+Pep was added
+They are player number 3
+Jin was added
+They are player number 4
+Loic was added
+They are player number 5
+Nelis was added
+They are player number 6
+Matteo is the current player
+They have rolled a 2
+Matteo's new location is 2
+The category is Sports
+Sports Question 0
+Question was incorrectly answered
+Matteo was sent to the penalty box
+John is the current player
+They have rolled a 6
+John's new location is 6
+The category is Sports
+Sports Question 1
+Answer was correct!!!!
+John now has 1 Gold Coins.
+Pep is the current player
+They have rolled a 1
+Pep's new location is 1
+The category is Science
+Science Question 0
+Answer was correct!!!!
+Pep now has 1 Gold Coins.
+Jin is the current player
+They have rolled a 4
+Jin's new location is 4
+The category is Pop
+Pop Question 0
+Answer was correct!!!!
+Jin now has 1 Gold Coins.
+Loic is the current player
+They have rolled a 2
+Loic's new location is 2
+The category is Sports
+Sports Question 2
+Answer was correct!!!!
+Loic now has 1 Gold Coins.
+Nelis is the current player
+They have rolled a 5
+Nelis's new location is 5
+The category is Science
+Science Question 1
+Answer was correct!!!!
+Nelis now has 1 Gold Coins.
+Matteo is the current player
+They have rolled a 5
+Matteo is getting out of the penalty box
+Matteo's new location is 7
+The category is Rock
+Rock Question 0
+Answer was correct!!!!
+Matteo now has 1 Gold Coins.
+John is the current player
+They have rolled a 6
+John's new location is 0
+The category is Pop
+Pop Question 1
+Answer was correct!!!!
+John now has 2 Gold Coins.
+Pep is the current player
+They have rolled a 2
+Pep's new location is 3
+The category is Rock
+Rock Question 1
+Answer was correct!!!!
+Pep now has 2 Gold Coins.
+Jin is the current player
+They have rolled a 4
+Jin's new location is 8
+The category is Pop
+Pop Question 2
+Answer was correct!!!!
+Jin now has 2 Gold Coins.
+Loic is the current player
+They have rolled a 1
+Loic's new location is 3
+The category is Rock
+Rock Question 2
+Answer was correct!!!!
+Loic now has 2 Gold Coins.
+Nelis is the current player
+They have rolled a 6
+Nelis's new location is 11
+The category is Rock
+Rock Question 3
+Answer was correct!!!!
+Nelis now has 2 Gold Coins.
+Matteo is the current player
+They have rolled a 2
+Matteo is not getting out of the penalty box
+John is the current player
+They have rolled a 6
+John's new location is 6
+The category is Sports
+Sports Question 3
+Question was incorrectly answered
+John was sent to the penalty box
+Pep is the current player
+They have rolled a 4
+Pep's new location is 7
+The category is Rock
+Rock Question 4
+Answer was correct!!!!
+Pep now has 3 Gold Coins.
+Jin is the current player
+They have rolled a 5
+Jin's new location is 1
+The category is Science
+Science Question 2
+Answer was correct!!!!
+Jin now has 3 Gold Coins.
+Loic is the current player
+They have rolled a 3
+Loic's new location is 6
+The category is Sports
+Sports Question 4
+Answer was correct!!!!
+Loic now has 3 Gold Coins.
+Nelis is the current player
+They have rolled a 3
+Nelis's new location is 2
+The category is Sports
+Sports Question 5
+Answer was correct!!!!
+Nelis now has 3 Gold Coins.
+Matteo is the current player
+They have rolled a 2
+Matteo is not getting out of the penalty box
+John is the current player
+They have rolled a 3
+John is getting out of the penalty box
+John's new location is 9
+The category is Science
+Science Question 3
+Answer was correct!!!!
+John now has 3 Gold Coins.
+Pep is the current player
+They have rolled a 1
+Pep's new location is 8
+The category is Pop
+Pop Question 3
+Answer was correct!!!!
+Pep now has 4 Gold Coins.
+Jin is the current player
+They have rolled a 6
+Jin's new location is 7
+The category is Rock
+Rock Question 5
+Answer was correct!!!!
+Jin now has 4 Gold Coins.
+Loic is the current player
+They have rolled a 1
+Loic's new location is 7
+The category is Rock
+Rock Question 6
+Answer was correct!!!!
+Loic now has 4 Gold Coins.
+Nelis is the current player
+They have rolled a 6
+Nelis's new location is 8
+The category is Pop
+Pop Question 4
+Answer was correct!!!!
+Nelis now has 4 Gold Coins.
+Matteo is the current player
+They have rolled a 4
+Matteo is not getting out of the penalty box
+John is the current player
+They have rolled a 2
+John is not getting out of the penalty box
+Pep is the current player
+They have rolled a 2
+Pep's new location is 10
+The category is Sports
+Sports Question 6
+Answer was correct!!!!
+Pep now has 5 Gold Coins.
+Jin is the current player
+They have rolled a 6
+Jin's new location is 1
+The category is Science
+Science Question 4
+Answer was correct!!!!
+Jin now has 5 Gold Coins.
+Loic is the current player
+They have rolled a 4
+Loic's new location is 11
+The category is Rock
+Rock Question 7
+Answer was correct!!!!
+Loic now has 5 Gold Coins.
+Nelis is the current player
+They have rolled a 5
+Nelis's new location is 1
+The category is Science
+Science Question 5
+Answer was correct!!!!
+Nelis now has 5 Gold Coins.
+Matteo is the current player
+They have rolled a 6
+Matteo is not getting out of the penalty box
+John is the current player
+They have rolled a 5
+John is getting out of the penalty box
+John's new location is 2
+The category is Sports
+Sports Question 7
+Answer was correct!!!!
+John now has 4 Gold Coins.
+Pep is the current player
+They have rolled a 5
+Pep's new location is 3
+The category is Rock
+Rock Question 8
+Answer was correct!!!!
+Pep now has 6 Gold Coins.

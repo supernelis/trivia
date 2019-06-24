@@ -33,22 +33,35 @@ describe("The tests", function () {
 		this.verify(result, {reporters: ["donothing"]});
 	});
 
-	it("verify for seed 3", function(){
-		var result = runGame(3);
-	
-		this.verify(result, {reporters: ["donothing"]});
-	});
+	it("1 player", function () {
+        this.verify(runGame(77, ["Matteo"]), {reporters: ["donothing"]});
+    });
 
-	it("verify for seed 5", function(){
-		var result = runGame(5);
-	
-		this.verify(result, {reporters: ["donothing"]});
-	});
+    it("2 player", function () {
+        this.verify(runGame(9, ["Matteo", "John"]), {reporters: ["donothing"]});
+    });
+
+    it("4 player", function () {
+        this.verify(runGame(2, ["Matteo", "John", "Pep", "Jin"]), {reporters: ["donothing"]});
+    });
+
+    it("5 player", function () {
+        this.verify(runGame(44, ["Matteo", "John", "Pep", "Jin", "Loic"]), {reporters: ["donothing"]});
+    });
+
+    it("6 player", function () {
+        this.verify(runGame(77, ["Matteo", "John", "Pep", "Jin", "Loic", "Nelis"]), {reporters: ["donothing"]});
+    });
+
+    it("7 player", function () {
+        this.verify(runGame(77, ["Matteo", "John", "Pep", "Jin", "Loic", "Nelis", "Foo"]), {reporters: ["donothing"]});
+    });
+
 });
 
 
 
-function runGame(seed=1){
+function runGame(seed=1, players=["Matteo","Nelis"]){
 	initialiseRandom(seed);
     console.oldLog = console.log;
     var result = "";
@@ -56,7 +69,7 @@ function runGame(seed=1){
         result += value + "\n";
     };
 
-    gameRunner();
+    gameRunner(players);
 
     console.log = console.oldLog;
     return result;

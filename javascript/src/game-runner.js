@@ -1,14 +1,14 @@
 var Game = require("./game.js")
 
-module.exports = function () {
+module.exports = function (players=["Chet", "Pat", "Sue"]) {
     var notAWinner = false;
 
     var game = new Game();
 
-    game.add('Chet');
-    game.add('Pat');
-    game.add('Sue');
-
+    for (var playerIndex in players ) {
+        game.add(players[playerIndex]);
+    }
+    
     do {
 
         game.roll(Math.floor(Math.random() * 6) + 1);
@@ -20,4 +20,4 @@ module.exports = function () {
         }
 
     } while (notAWinner);
-}  
+};  
