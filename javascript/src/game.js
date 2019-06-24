@@ -10,7 +10,7 @@ module.exports = function () {
 	var rockQuestions = new Array();
 
 	var currentPlayer = 0;
-	var isGettingOutOfPenaltyBox = false;
+	var isGettingOutOfPenaltyBox;
 
 	var didPlayerWin = function () {
 		return !(purses[currentPlayer] == 6)
@@ -53,12 +53,9 @@ module.exports = function () {
 		players.push(playerName);
 		places[this.howManyPlayers() - 1] = 0;
 		purses[this.howManyPlayers() - 1] = 0;
-		inPenaltyBox[this.howManyPlayers() - 1] = false;
 
 		console.log(playerName + " was added");
 		console.log("They are player number " + players.length);
-
-		return true;
 	};
 
 	this.howManyPlayers = function () {
