@@ -27,15 +27,29 @@ describe("The tests", function () {
 		expect(Math.floor(Math.random() * 6)).to.eq(4);
 	});
 
-	it("should compare the result", function(){
-		initialiseRandom(1);
-		var result = runGame();
+	it("should verify the result", function(){
+		var result = runGame(1);
+	
+		this.verify(result, {reporters: ["donothing"]});
+	});
+
+	it("verify for seed 3", function(){
+		var result = runGame(3);
+	
+		this.verify(result, {reporters: ["donothing"]});
+	});
+
+	it("verify for seed 5", function(){
+		var result = runGame(5);
 	
 		this.verify(result, {reporters: ["donothing"]});
 	});
 });
 
-function runGame(){
+
+
+function runGame(seed=1){
+	initialiseRandom(seed);
     console.oldLog = console.log;
     var result = "";
     console.log = function (value) {
