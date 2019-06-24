@@ -1,6 +1,7 @@
 package com.adaptionsoft.games.trivia;
 
 import com.adaptionsoft.games.trivia.runner.GameRunner;
+import org.approvaltests.Approvals;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -11,20 +12,26 @@ public class GoldenMasterTest {
 
 	@Test
 	public void can_run_a_controlled_game_test() {
-		Random rand = new Random(1);
-		String result = runGame(rand);
+		String result = runGame(1);
 
 		System.out.println(result);
 	}
 
-	public String runGame(Random rand) {
+	@Test
+	public void can_run_a_controlled_game() {
+		String result = runGame(1);
+
+		Approvals.verify(result);
+	}
+
+	public String runGame(int seed) {
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		PrintStream printStream = new PrintStream(outputStream, true);
 
 		PrintStream oldOut = System.out;
 		System.setOut(printStream);
 
-		GameRunner.runGame(rand);
+		GameRunner.runGame(new Random(seed));
 
 		System.setOut(oldOut);
 
