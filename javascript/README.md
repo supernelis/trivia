@@ -1,14 +1,2 @@
-Test with node.js
-=====================
 
-## Run Test
-
-```bash
-$ npm test
-```
-
-## Run Mutation Testing
-
-```bash
-$ npm run mutation-test
-```
+The information regarding this workshop can be found on [here](https://github.com/supernelis/workshop-renovating-legacy-codebase)
