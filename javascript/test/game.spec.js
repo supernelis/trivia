@@ -26,6 +26,13 @@ describe("The tests", function () {
 		initialiseRandom(1);
 		expect(Math.floor(Math.random() * 6)).to.eq(4);
 	});
+
+	it("should compare the result", function(){
+		initialiseRandom(1);
+		var result = runGame();
+	
+		this.verify(result, {reporters: ["donothing"]});
+	});
 });
 
 function runGame(){
