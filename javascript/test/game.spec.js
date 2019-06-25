@@ -3,36 +3,13 @@ var expect = require('chai').expect;
 var Game = require("../src/game.js");
 var gameRunner = require("../src/game-runner.js")
 
-describe("The tests", function () {
-	it("should pass", function () {
-		expect(true).to.equal(true);
-	});
-
-	it("should access game", function () {
-		expect(Game).to.be.a('function');
-	});
-
-	it("should access game runner", function () {
-		expect(gameRunner).to.be.a('function');
-	});
-
-	it("should allow to control the output", function() {
-		var result = runGame();
-		console.log("This is the result");
-		console.log(result);
-	});
-
-	it("should control the randomness", function(){
-		initialiseRandom(1);
-		expect(Math.floor(Math.random() * 6)).to.eq(4);
-	});
-
-	it("should verify the result", function(){
+describe("Trivia Game", function () {
+    it("should verify the result", function(){
 		var result = runGame(1);
 	
 		this.verify(result, {reporters: ["donothing"]});
-	});
-
+    });
+    
 	it("1 player", function () {
         this.verify(runGame(77, ["Matteo"]), {reporters: ["donothing"]});
     });
@@ -56,7 +33,6 @@ describe("The tests", function () {
     it("7 player", function () {
         this.verify(runGame(77, ["Matteo", "John", "Pep", "Jin", "Loic", "Nelis", "Foo"]), {reporters: ["donothing"]});
     });
-
 });
 
 function runGame(seed=1, players){
