@@ -59,9 +59,7 @@ describe("The tests", function () {
 
 });
 
-
-
-function runGame(seed=1, players=["Matteo","Nelis"]){
+function runGame(seed=1, players){
 	initialiseRandom(seed);
     console.oldLog = console.log;
     var result = "";
