@@ -5,7 +5,8 @@
   "main": "game.js",
   "scripts": {
     "test": "nyc mocha --recursive",
-    "mutation-test": "stryker run"
+    "mutation-test": "stryker run",
+    "approve-all": "node approve.js"
   },
   "nyc": {
     "reporter": [
