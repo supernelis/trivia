@@ -128,11 +128,7 @@ module.exports = function () {
 					currentPlayer = 0;
 				return true;
 			}
-
-
-
 		} else {
-
 			console.log("Answer was correct!!!!");
 
 			purses[currentPlayer] += 1;
