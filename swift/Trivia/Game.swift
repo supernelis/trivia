@@ -49,8 +49,8 @@ public class Game {
 	    purses[howManyPlayers()] = 0
 	    inPenaltyBox[howManyPlayers()] = false
 	    
-	    print(playerName, "was added")
-	    print("They are player number", players.count)
+	    printer.output(playerName, "was added")
+	    printer.output("They are player number", players.count)
 		return true
 	}
 	
@@ -59,24 +59,24 @@ public class Game {
 	}
 
     public func roll(roll: Int) {
-		print(players[currentPlayer], "is the current player")
-		print("They have rolled a", roll)
+		printer.output(players[currentPlayer], "is the current player")
+		printer.output("They have rolled a", roll)
 		
 		if inPenaltyBox[currentPlayer] {
 			if roll % 2 != 0 {
 				isGettingOutOfPenaltyBox = true
 				
-				print(players[currentPlayer], "is getting out of the penalty box")
+				printer.output(players[currentPlayer], "is getting out of the penalty box")
 				places[currentPlayer] = places[currentPlayer] + roll
                 if places[currentPlayer] > 11 {places[currentPlayer] = places[currentPlayer] - 12}
 				
-				print(players[currentPlayer]
+				printer.output(players[currentPlayer]
 						+ "'s new location is",
 						places[currentPlayer])
-				print("The category is", currentCategory())
+				printer.output("The category is", currentCategory())
 				askQuestion()
 			} else {
-				print(players[currentPlayer], "is not getting out of the penalty box")
+				printer.output(players[currentPlayer], "is not getting out of the penalty box")
 				isGettingOutOfPenaltyBox = false
 				}
 			
@@ -85,10 +85,10 @@ public class Game {
 			places[currentPlayer] = places[currentPlayer] + roll
             if places[currentPlayer] > 11 {places[currentPlayer] = places[currentPlayer] - 12}
 			
-			print(players[currentPlayer]
+			printer.output(players[currentPlayer]
 					+ "'s new location is",
 					places[currentPlayer])
-			print("The category is", currentCategory())
+			printer.output("The category is", currentCategory())
 			askQuestion()
 		}
 		
@@ -96,13 +96,13 @@ public class Game {
 
  	private func askQuestion() {
         if currentCategory() == "Pop" {
-            print(popQuestions.removeFirst())}
+            printer.output(popQuestions.removeFirst())}
         if currentCategory() == "Science"{
-            print(scienceQuestions.removeFirst())}
+            printer.output(scienceQuestions.removeFirst())}
         if currentCategory() == "Sports"{
-            print(sportsQuestions.removeFirst())}
+            printer.output(sportsQuestions.removeFirst())}
         if currentCategory() == "Rock"{
-            print(rockQuestions.removeFirst())}
+            printer.output(rockQuestions.removeFirst())}
 	}
 	
 	
@@ -122,9 +122,9 @@ public class Game {
 	public func wasCorrectlyAnswered() -> Bool {
 		if inPenaltyBox[currentPlayer]{
 			if isGettingOutOfPenaltyBox {
-				print("Answer was correct!!!!")
+				printer.output("Answer was correct!!!!")
 				purses[currentPlayer] += 1
-				print(players[currentPlayer],
+				printer.output(players[currentPlayer],
 						"now has",
 						purses[currentPlayer],
 						"Gold Coins.")
@@ -144,11 +144,11 @@ public class Game {
 			
 		} else {
 		
-			print("Answer was corrent!!!!")
+			printer.output("Answer was corrent!!!!")
 			purses[currentPlayer] += 1
-			print(players[currentPlayer],
+			printer.output(players[currentPlayer],
 					"now has",
-					purses[currentPlayer],
+                    purses[currentPlayer],
 					"Gold Coins.")
 			
 			let winner = didPlayerWin
@@ -161,7 +161,7 @@ public class Game {
 	
 	public func wrongAnswer()->Bool{
         printer.output("Question was incorrectly answered")
-		print(players[currentPlayer], "was sent to the penalty box")
+		printer.output(players[currentPlayer], "was sent to the penalty box")
 		inPenaltyBox[currentPlayer] = true
 		
 		currentPlayer += 1

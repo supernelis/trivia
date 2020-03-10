@@ -7,9 +7,7 @@
 //
 
 public class Printer {
-    public func output(_ outputs: Any...){
-        for output in outputs {
-            print(output)
-        }
+    public func output(_ items: CustomStringConvertible...){
+        print(items.map{$0.description}.joined(separator: " "))
     }
 }
