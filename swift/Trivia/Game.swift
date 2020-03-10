@@ -158,7 +158,7 @@ public class Game {
 	}
 	
 	public func wrongAnswer()->Bool{
-		print("Question was incorrectly answered")
+		output("Question was incorrectly answered")
 		print(players[currentPlayer], "was sent to the penalty box")
 		inPenaltyBox[currentPlayer] = true
 		
@@ -171,4 +171,10 @@ public class Game {
     private var didPlayerWin: Bool {
 		return !(purses[currentPlayer] == 6)
 	}
+    
+    public func output(_ outputs: Any...){
+        for output in outputs {
+            print(output)
+        }
+    }
 }
