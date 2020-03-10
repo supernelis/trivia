@@ -1,0 +1,13 @@
+{
+  "arguments" : [
+    "-workspace",
+    "Trivia.xcworkspace",
+    "-scheme",
+    "Trivia",
+    "test"
+  ],
+  "exclude" : [
+
+  ],
+  "executable" : "\/usr\/bin\/xcodebuild"
+}
