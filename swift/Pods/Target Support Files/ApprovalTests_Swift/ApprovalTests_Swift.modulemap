@@ -1,0 +1,6 @@
+framework module ApprovalTests_Swift {
+  umbrella header "ApprovalTests_Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "ApprovalTests_Swift",
+  "version": "0.0.1",
+  "summary": "ApprovalTests for Swift.",
+  "description": "Capturing Human Intelligence - ApprovalTests is an open source assertion/verification library to aid unit testing.\nApprovalsTest Swift is compatible with the XCUnit testing framework",
+  "homepage": "https://github.com/approvals",
+  "license": {
+    "type": "Apache 2.0 License",
+    "file": "LICENSE"
+  },
+  "authors": "Matthew Carlson",
+  "swift_versions": "4.1",
+  "platforms": {
+    "ios": "11.0",
+    "osx": "10.13"
+  },
+  "source": {
+    "git": "https://github.com/approvals/ApprovalTests.Swift.git"
+  },
+  "frameworks": "XCTest",
+  "source_files": [
+    "ApprovalTests.Swift",
+    "ApprovalTests.Swift/**/*.swift"
+  ],
+  "ios": {
+    "exclude_files": "ApprovalTests.Swift/**/DiffMergReporter.swift"
+  },
+  "osx": {
+    "exclude_files": "ApprovalTests.Swift/reporters/ios/XCTReporter.swift"
+  },
+  "swift_version": "4.1"
+}

@@ -1,0 +1,841 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 47;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		054B65289790C0AD5F4F6A24313DF421 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F853445D02B49CEF859FD8B3513E728 /* StringUtils.swift */; };
+		05516031B31A52A3A5BF894C7B16C557 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76BF824A4DE1525B96278522EE4F8A4 /* Loader.swift */; };
+		0682C9F41CB2E20F9FA8C383713B7321 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1B52313CE42FBE5FF60CFA6296413F /* Cocoa.framework */; };
+		1FE5CA33CE4B97D3CAF38E085EA15963 /* Pods-Trivia-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 620ED114DD4B5F558211C3EF7A231559 /* Pods-Trivia-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29A40B5439D1DCBFCC2C81A2A7F4791F /* Pods-Trivia-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D25B93D787FE2FBA1A23F485D145A60 /* Pods-Trivia-dummy.m */; };
+		2B6B6227FD1707EF430D4F4CDF797850 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1B52313CE42FBE5FF60CFA6296413F /* Cocoa.framework */; };
+		3FC8B4E27E7E3775E7A116D9EAC8B825 /* ApprovalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930EFD1041BEA41A7A34531E7779350C /* ApprovalError.swift */; };
+		54989460537AF6616147D6E8A6B92E7A /* FileApprover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940159C184DC8EDB078A5595C47E676 /* FileApprover.swift */; };
+		55124D67F545B2318AF15B63B1859CCE /* DiffMergReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CF9BDA056B3D5E7FBDA7C21ABF76A /* DiffMergReporter.swift */; };
+		59BE48912E60E9AB3B99B31AA2ADDC05 /* ApprovalTests_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = A1070872844D669E207BFC95FC5CE31B /* ApprovalTests_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B2911508C2748E937C800399E684C55 /* ApprovalNamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC3BAAA23040ED1673DD381DB2E192E /* ApprovalNamer.swift */; };
+		77FBF9702D760F5B0DEA54E989008FC8 /* CombinationApprovals.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB38EE76D7A6300379FFC62A9A908F43 /* CombinationApprovals.swift */; };
+		94BEC40785004FAF07A77BFF018BAE24 /* Approvals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D3F05DD78FE3C1CA0156FBCE97B7EF /* Approvals.swift */; };
+		9AC2CD338E23E53534FB1073B16B67B3 /* Namer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCCED6045F98FE0A7BACE04FBBE9C03 /* Namer.swift */; };
+		A5F8D698B13BA3DD3E9822FF07093863 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F603D5B493E0F99AF59269B523D30A68 /* XCTest.framework */; };
+		A657D74DC6234DC8AE974CE30466E676 /* CwlDemangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B8CFCC18F1F12CDC9241C2280B0C97 /* CwlDemangle.swift */; };
+		B8535FAE7509F0C07CB8D9DBB00A4C5F /* ApprovalTextWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2EE07B680620C83B0C35078773398D /* ApprovalTextWriter.swift */; };
+		C43A3729B07E3BEFE658E47EFA76D579 /* ApprovalTests_Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B5BA47777E530D2C255431131F0A3D /* ApprovalTests_Swift-dummy.m */; };
+		C52093B737301660AD83C002B2C38CD6 /* ApprovalApprover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26026D7B76D402F04D747B1B2CBEA511 /* ApprovalApprover.swift */; };
+		CE0A736F860AF8EB6A9DF313A63E2EC6 /* ReporterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B913AC940219FD555904C86709413C1E /* ReporterFactory.swift */; };
+		DAE32D3E138263D51AA9218D6699A092 /* ApprovalWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FA0270077E6E461010019586C5D0A4 /* ApprovalWriter.swift */; };
+		E1EB7D6B0DF4211C0606D13584C775D4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1B52313CE42FBE5FF60CFA6296413F /* Cocoa.framework */; };
+		E4E0633B502B83F4756DB15B5C7A4F7E /* Pods-TriviaTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A30998E06FD30A2910DC928D8881F962 /* Pods-TriviaTests-dummy.m */; };
+		ED230075CAC49580F0C8AE421F447AD6 /* UseReporterFromAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBA9C1C1555E8CD074EB738B909CFB0 /* UseReporterFromAnnotations.swift */; };
+		F30B462CBB3E04846C6211BCBF203F68 /* ApprovalFailureReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5BBB81EFFF42077A3912D85ED1AC5 /* ApprovalFailureReporter.swift */; };
+		F767D43F0CF943A4739ADA16D0793272 /* ApprovalTests_Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B64840C90EAF4CFDFF373E6063FFB64D /* ApprovalTests_Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FDBA07715C09E1FC2AA00AB65F886AAB /* Pods-TriviaTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 277BD3AD4CC7179FDF35E1BAA591217D /* Pods-TriviaTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A84B412B143A473DDF0A291CFE0E2DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 676F3B8C2266E2D6BA2E1B68469CA994;
+			remoteInfo = "Pods-Trivia";
+		};
+		C816FE91D86698AB0D3AE7A49A599017 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 110826A19F098D9DDDD3248F8BC4773A;
+			remoteInfo = ApprovalTests_Swift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		086D484C7390794D0D6B0755B05F304D /* Pods-TriviaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TriviaTests.release.xcconfig"; sourceTree = "<group>"; };
+		090A34E06C7702B60E111067DC4C3537 /* Pods-TriviaTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TriviaTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		09C8E743E3C966FAF64FF571FB09E0D4 /* ApprovalTests_Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ApprovalTests_Swift.modulemap; sourceTree = "<group>"; };
+		13DB779F01F8C37E89A7E1BB6A89D388 /* Pods-TriviaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TriviaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1940159C184DC8EDB078A5595C47E676 /* FileApprover.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileApprover.swift; path = ApprovalTests.Swift/approvers/FileApprover.swift; sourceTree = "<group>"; };
+		1F853445D02B49CEF859FD8B3513E728 /* StringUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringUtils.swift; path = ApprovalTests.Swift/Utils/StringUtils.swift; sourceTree = "<group>"; };
+		26026D7B76D402F04D747B1B2CBEA511 /* ApprovalApprover.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApprovalApprover.swift; path = ApprovalTests.Swift/approvers/ApprovalApprover.swift; sourceTree = "<group>"; };
+		26EE733BF58EF7B8804002C342DC8885 /* ApprovalTests_Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ApprovalTests_Swift.release.xcconfig; sourceTree = "<group>"; };
+		277BD3AD4CC7179FDF35E1BAA591217D /* Pods-TriviaTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TriviaTests-umbrella.h"; sourceTree = "<group>"; };
+		2D572B6F5ECFB9CC69631BA4082C1323 /* Pods-TriviaTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TriviaTests-frameworks.sh"; sourceTree = "<group>"; };
+		3B2EE07B680620C83B0C35078773398D /* ApprovalTextWriter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApprovalTextWriter.swift; path = ApprovalTests.Swift/writers/ApprovalTextWriter.swift; sourceTree = "<group>"; };
+		3C5F22719E278CC5FF3215320F359001 /* Pods-Trivia-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Trivia-Info.plist"; sourceTree = "<group>"; };
+		483B75D7822E81EFDA48CCADD12EEE6F /* Pods-Trivia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Trivia.release.xcconfig"; sourceTree = "<group>"; };
+		48B5BA47777E530D2C255431131F0A3D /* ApprovalTests_Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ApprovalTests_Swift-dummy.m"; sourceTree = "<group>"; };
+		49B8CFCC18F1F12CDC9241C2280B0C97 /* CwlDemangle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlDemangle.swift; path = ApprovalTests.Swift/Utils/CwlDemangle.swift; sourceTree = "<group>"; };
+		4DBA9C1C1555E8CD074EB738B909CFB0 /* UseReporterFromAnnotations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UseReporterFromAnnotations.swift; path = ApprovalTests.Swift/reporters/UseReporterFromAnnotations.swift; sourceTree = "<group>"; };
+		53DEFF404F18BFCCE75294533FCB55D9 /* Pods_Trivia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Trivia.framework; path = "Pods-Trivia.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C1B52313CE42FBE5FF60CFA6296413F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		5D25B93D787FE2FBA1A23F485D145A60 /* Pods-Trivia-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Trivia-dummy.m"; sourceTree = "<group>"; };
+		620ED114DD4B5F558211C3EF7A231559 /* Pods-Trivia-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Trivia-umbrella.h"; sourceTree = "<group>"; };
+		681F66BA769206A8B9EE76CF88AA2DD1 /* Pods-TriviaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TriviaTests.modulemap"; sourceTree = "<group>"; };
+		68590948252C9BD04EDEEADC828DB6EE /* Pods-Trivia.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Trivia.modulemap"; sourceTree = "<group>"; };
+		6DCCED6045F98FE0A7BACE04FBBE9C03 /* Namer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Namer.swift; path = ApprovalTests.Swift/namer/Namer.swift; sourceTree = "<group>"; };
+		7A4FC3D80FAF2FEA667E6D3B38F9A56D /* Pods-TriviaTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TriviaTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		804729B7F4255FE27237CA0ED5E6B7CD /* ApprovalTests_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ApprovalTests_Swift.framework; path = ApprovalTests_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		930EFD1041BEA41A7A34531E7779350C /* ApprovalError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApprovalError.swift; path = ApprovalTests.Swift/Utils/ApprovalError.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E121B577A1C8942DF53AD61EC2B4ECF /* Pods_TriviaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TriviaTests.framework; path = "Pods-TriviaTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FDF9B184AD51E181A0B3985F2DF2A82 /* Pods-Trivia-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Trivia-acknowledgements.plist"; sourceTree = "<group>"; };
+		A1070872844D669E207BFC95FC5CE31B /* ApprovalTests_Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ApprovalTests_Swift.h; path = ApprovalTests.Swift/ApprovalTests_Swift.h; sourceTree = "<group>"; };
+		A30998E06FD30A2910DC928D8881F962 /* Pods-TriviaTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TriviaTests-dummy.m"; sourceTree = "<group>"; };
+		A666FFFD8DB63DA86822855C9DE765B7 /* ApprovalTests_Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ApprovalTests_Swift-prefix.pch"; sourceTree = "<group>"; };
+		A6FA0270077E6E461010019586C5D0A4 /* ApprovalWriter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApprovalWriter.swift; path = ApprovalTests.Swift/core/ApprovalWriter.swift; sourceTree = "<group>"; };
+		A82A79E9BCBB4250D462FD1F0C90FF15 /* Pods-Trivia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Trivia.debug.xcconfig"; sourceTree = "<group>"; };
+		AC527E94FFA1F15883D0DF86CFEE95B5 /* ApprovalTests_Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ApprovalTests_Swift-Info.plist"; sourceTree = "<group>"; };
+		B64840C90EAF4CFDFF373E6063FFB64D /* ApprovalTests_Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ApprovalTests_Swift-umbrella.h"; sourceTree = "<group>"; };
+		B76BF824A4DE1525B96278522EE4F8A4 /* Loader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Loader.swift; path = ApprovalTests.Swift/namer/Loader.swift; sourceTree = "<group>"; };
+		B913AC940219FD555904C86709413C1E /* ReporterFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReporterFactory.swift; path = ApprovalTests.Swift/reporters/ReporterFactory.swift; sourceTree = "<group>"; };
+		B9D3F05DD78FE3C1CA0156FBCE97B7EF /* Approvals.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Approvals.swift; path = ApprovalTests.Swift/Approvals.swift; sourceTree = "<group>"; };
+		BB38EE76D7A6300379FFC62A9A908F43 /* CombinationApprovals.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CombinationApprovals.swift; path = ApprovalTests.Swift/combinations/CombinationApprovals.swift; sourceTree = "<group>"; };
+		BC6F6C5B7B4D044000992428F7024047 /* Pods-TriviaTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TriviaTests-Info.plist"; sourceTree = "<group>"; };
+		CAC3BAAA23040ED1673DD381DB2E192E /* ApprovalNamer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApprovalNamer.swift; path = ApprovalTests.Swift/namer/ApprovalNamer.swift; sourceTree = "<group>"; };
+		CDDA551153CB217F4B325F6D2D0AF1A9 /* ApprovalTests_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ApprovalTests_Swift.debug.xcconfig; sourceTree = "<group>"; };
+		D975A5E0FD36F99C98211154E1E81C94 /* Pods-Trivia-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Trivia-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D9A5BBB81EFFF42077A3912D85ED1AC5 /* ApprovalFailureReporter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApprovalFailureReporter.swift; path = ApprovalTests.Swift/core/ApprovalFailureReporter.swift; sourceTree = "<group>"; };
+		E14CF9BDA056B3D5E7FBDA7C21ABF76A /* DiffMergReporter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiffMergReporter.swift; path = ApprovalTests.Swift/reporters/mac/DiffMergReporter.swift; sourceTree = "<group>"; };
+		F603D5B493E0F99AF59269B523D30A68 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A8B87D2A2712166E394E97F00B1118D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B6B6227FD1707EF430D4F4CDF797850 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EA4A18EFDC10BD779B8C6315081560D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0682C9F41CB2E20F9FA8C383713B7321 /* Cocoa.framework in Frameworks */,
+				A5F8D698B13BA3DD3E9822FF07093863 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA5BF3B8D62B0920A073DA64756F1870 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1EB7D6B0DF4211C0606D13584C775D4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0BDCE60F75AE74CE693928CA7364D4A8 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C750AFDA44B88FCA7BBA1A118E86F4C /* Pods-Trivia */,
+				AA1C4FC095953A28C00405FBE05B467D /* Pods-TriviaTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		38EC55A2E6D3D239FAB90C5BE444B8A3 /* ApprovalTests_Swift */ = {
+			isa = PBXGroup;
+			children = (
+				26026D7B76D402F04D747B1B2CBEA511 /* ApprovalApprover.swift */,
+				930EFD1041BEA41A7A34531E7779350C /* ApprovalError.swift */,
+				D9A5BBB81EFFF42077A3912D85ED1AC5 /* ApprovalFailureReporter.swift */,
+				CAC3BAAA23040ED1673DD381DB2E192E /* ApprovalNamer.swift */,
+				B9D3F05DD78FE3C1CA0156FBCE97B7EF /* Approvals.swift */,
+				A1070872844D669E207BFC95FC5CE31B /* ApprovalTests_Swift.h */,
+				3B2EE07B680620C83B0C35078773398D /* ApprovalTextWriter.swift */,
+				A6FA0270077E6E461010019586C5D0A4 /* ApprovalWriter.swift */,
+				BB38EE76D7A6300379FFC62A9A908F43 /* CombinationApprovals.swift */,
+				49B8CFCC18F1F12CDC9241C2280B0C97 /* CwlDemangle.swift */,
+				E14CF9BDA056B3D5E7FBDA7C21ABF76A /* DiffMergReporter.swift */,
+				1940159C184DC8EDB078A5595C47E676 /* FileApprover.swift */,
+				B76BF824A4DE1525B96278522EE4F8A4 /* Loader.swift */,
+				6DCCED6045F98FE0A7BACE04FBBE9C03 /* Namer.swift */,
+				B913AC940219FD555904C86709413C1E /* ReporterFactory.swift */,
+				1F853445D02B49CEF859FD8B3513E728 /* StringUtils.swift */,
+				4DBA9C1C1555E8CD074EB738B909CFB0 /* UseReporterFromAnnotations.swift */,
+				722A4EA591BF8AC0E164BEB998DEAEC3 /* Support Files */,
+			);
+			name = ApprovalTests_Swift;
+			path = ApprovalTests_Swift;
+			sourceTree = "<group>";
+		};
+		4794ED793AA42F2173B5C9E1A5B8A479 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38EC55A2E6D3D239FAB90C5BE444B8A3 /* ApprovalTests_Swift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4BBBD867ECEC0BA52D4BE131BE0C31A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				804729B7F4255FE27237CA0ED5E6B7CD /* ApprovalTests_Swift.framework */,
+				53DEFF404F18BFCCE75294533FCB55D9 /* Pods_Trivia.framework */,
+				9E121B577A1C8942DF53AD61EC2B4ECF /* Pods_TriviaTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C750AFDA44B88FCA7BBA1A118E86F4C /* Pods-Trivia */ = {
+			isa = PBXGroup;
+			children = (
+				68590948252C9BD04EDEEADC828DB6EE /* Pods-Trivia.modulemap */,
+				D975A5E0FD36F99C98211154E1E81C94 /* Pods-Trivia-acknowledgements.markdown */,
+				9FDF9B184AD51E181A0B3985F2DF2A82 /* Pods-Trivia-acknowledgements.plist */,
+				5D25B93D787FE2FBA1A23F485D145A60 /* Pods-Trivia-dummy.m */,
+				3C5F22719E278CC5FF3215320F359001 /* Pods-Trivia-Info.plist */,
+				620ED114DD4B5F558211C3EF7A231559 /* Pods-Trivia-umbrella.h */,
+				A82A79E9BCBB4250D462FD1F0C90FF15 /* Pods-Trivia.debug.xcconfig */,
+				483B75D7822E81EFDA48CCADD12EEE6F /* Pods-Trivia.release.xcconfig */,
+			);
+			name = "Pods-Trivia";
+			path = "Target Support Files/Pods-Trivia";
+			sourceTree = "<group>";
+		};
+		722A4EA591BF8AC0E164BEB998DEAEC3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				09C8E743E3C966FAF64FF571FB09E0D4 /* ApprovalTests_Swift.modulemap */,
+				48B5BA47777E530D2C255431131F0A3D /* ApprovalTests_Swift-dummy.m */,
+				AC527E94FFA1F15883D0DF86CFEE95B5 /* ApprovalTests_Swift-Info.plist */,
+				A666FFFD8DB63DA86822855C9DE765B7 /* ApprovalTests_Swift-prefix.pch */,
+				B64840C90EAF4CFDFF373E6063FFB64D /* ApprovalTests_Swift-umbrella.h */,
+				CDDA551153CB217F4B325F6D2D0AF1A9 /* ApprovalTests_Swift.debug.xcconfig */,
+				26EE733BF58EF7B8804002C342DC8885 /* ApprovalTests_Swift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ApprovalTests_Swift";
+			sourceTree = "<group>";
+		};
+		AA1C4FC095953A28C00405FBE05B467D /* Pods-TriviaTests */ = {
+			isa = PBXGroup;
+			children = (
+				681F66BA769206A8B9EE76CF88AA2DD1 /* Pods-TriviaTests.modulemap */,
+				7A4FC3D80FAF2FEA667E6D3B38F9A56D /* Pods-TriviaTests-acknowledgements.markdown */,
+				090A34E06C7702B60E111067DC4C3537 /* Pods-TriviaTests-acknowledgements.plist */,
+				A30998E06FD30A2910DC928D8881F962 /* Pods-TriviaTests-dummy.m */,
+				2D572B6F5ECFB9CC69631BA4082C1323 /* Pods-TriviaTests-frameworks.sh */,
+				BC6F6C5B7B4D044000992428F7024047 /* Pods-TriviaTests-Info.plist */,
+				277BD3AD4CC7179FDF35E1BAA591217D /* Pods-TriviaTests-umbrella.h */,
+				13DB779F01F8C37E89A7E1BB6A89D388 /* Pods-TriviaTests.debug.xcconfig */,
+				086D484C7390794D0D6B0755B05F304D /* Pods-TriviaTests.release.xcconfig */,
+			);
+			name = "Pods-TriviaTests";
+			path = "Target Support Files/Pods-TriviaTests";
+			sourceTree = "<group>";
+		};
+		C080C886C9E2F80D52E3E86A62E5B711 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD7E826005E10CA9EC79DA5F73D4BC66 /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				C080C886C9E2F80D52E3E86A62E5B711 /* Frameworks */,
+				4794ED793AA42F2173B5C9E1A5B8A479 /* Pods */,
+				4BBBD867ECEC0BA52D4BE131BE0C31A0 /* Products */,
+				0BDCE60F75AE74CE693928CA7364D4A8 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		FD7E826005E10CA9EC79DA5F73D4BC66 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				5C1B52313CE42FBE5FF60CFA6296413F /* Cocoa.framework */,
+				F603D5B493E0F99AF59269B523D30A68 /* XCTest.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6F2342F3B34423CF9E6178B249F077E8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDBA07715C09E1FC2AA00AB65F886AAB /* Pods-TriviaTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E18B127795F6CA2C90E4C9B2EB915F82 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F767D43F0CF943A4739ADA16D0793272 /* ApprovalTests_Swift-umbrella.h in Headers */,
+				59BE48912E60E9AB3B99B31AA2ADDC05 /* ApprovalTests_Swift.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED257ABDD8CB767F39597B78D8D70278 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE5CA33CE4B97D3CAF38E085EA15963 /* Pods-Trivia-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0D1DC9016B98C78945D29FA139EF2253 /* Pods-TriviaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 773B6A4A9B15EA4B465822C97E8576F3 /* Build configuration list for PBXNativeTarget "Pods-TriviaTests" */;
+			buildPhases = (
+				6F2342F3B34423CF9E6178B249F077E8 /* Headers */,
+				AC3EBA113A382E65C42E584C3BCBADE8 /* Sources */,
+				AA5BF3B8D62B0920A073DA64756F1870 /* Frameworks */,
+				9E7B789547FA89388D00D57B77BB3498 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				90402E20440DFEB140AA079C20094025 /* PBXTargetDependency */,
+				F8544D68631B69A704E769C3784D4633 /* PBXTargetDependency */,
+			);
+			name = "Pods-TriviaTests";
+			productName = "Pods-TriviaTests";
+			productReference = 9E121B577A1C8942DF53AD61EC2B4ECF /* Pods_TriviaTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		110826A19F098D9DDDD3248F8BC4773A /* ApprovalTests_Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D36506DE845882D9B25A960076FA8555 /* Build configuration list for PBXNativeTarget "ApprovalTests_Swift" */;
+			buildPhases = (
+				E18B127795F6CA2C90E4C9B2EB915F82 /* Headers */,
+				1A042AF9992988315F47913288A5215D /* Sources */,
+				4EA4A18EFDC10BD779B8C6315081560D /* Frameworks */,
+				F52FC70569D5388EEFE6624F3676F0C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ApprovalTests_Swift;
+			productName = ApprovalTests_Swift;
+			productReference = 804729B7F4255FE27237CA0ED5E6B7CD /* ApprovalTests_Swift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		676F3B8C2266E2D6BA2E1B68469CA994 /* Pods-Trivia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17D78094C9A62C508424BC905DF39B0A /* Build configuration list for PBXNativeTarget "Pods-Trivia" */;
+			buildPhases = (
+				ED257ABDD8CB767F39597B78D8D70278 /* Headers */,
+				59FBD4F758900FDBB99AA5978321D339 /* Sources */,
+				2A8B87D2A2712166E394E97F00B1118D /* Frameworks */,
+				314D4E5E76DA9250183FC7738E3D3EF3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Trivia";
+			productName = "Pods-Trivia";
+			productReference = 53DEFF404F18BFCCE75294533FCB55D9 /* Pods_Trivia.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 6.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 4BBBD867ECEC0BA52D4BE131BE0C31A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				110826A19F098D9DDDD3248F8BC4773A /* ApprovalTests_Swift */,
+				676F3B8C2266E2D6BA2E1B68469CA994 /* Pods-Trivia */,
+				0D1DC9016B98C78945D29FA139EF2253 /* Pods-TriviaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		314D4E5E76DA9250183FC7738E3D3EF3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E7B789547FA89388D00D57B77BB3498 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F52FC70569D5388EEFE6624F3676F0C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A042AF9992988315F47913288A5215D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C52093B737301660AD83C002B2C38CD6 /* ApprovalApprover.swift in Sources */,
+				3FC8B4E27E7E3775E7A116D9EAC8B825 /* ApprovalError.swift in Sources */,
+				F30B462CBB3E04846C6211BCBF203F68 /* ApprovalFailureReporter.swift in Sources */,
+				5B2911508C2748E937C800399E684C55 /* ApprovalNamer.swift in Sources */,
+				94BEC40785004FAF07A77BFF018BAE24 /* Approvals.swift in Sources */,
+				C43A3729B07E3BEFE658E47EFA76D579 /* ApprovalTests_Swift-dummy.m in Sources */,
+				B8535FAE7509F0C07CB8D9DBB00A4C5F /* ApprovalTextWriter.swift in Sources */,
+				DAE32D3E138263D51AA9218D6699A092 /* ApprovalWriter.swift in Sources */,
+				77FBF9702D760F5B0DEA54E989008FC8 /* CombinationApprovals.swift in Sources */,
+				A657D74DC6234DC8AE974CE30466E676 /* CwlDemangle.swift in Sources */,
+				55124D67F545B2318AF15B63B1859CCE /* DiffMergReporter.swift in Sources */,
+				54989460537AF6616147D6E8A6B92E7A /* FileApprover.swift in Sources */,
+				05516031B31A52A3A5BF894C7B16C557 /* Loader.swift in Sources */,
+				9AC2CD338E23E53534FB1073B16B67B3 /* Namer.swift in Sources */,
+				CE0A736F860AF8EB6A9DF313A63E2EC6 /* ReporterFactory.swift in Sources */,
+				054B65289790C0AD5F4F6A24313DF421 /* StringUtils.swift in Sources */,
+				ED230075CAC49580F0C8AE421F447AD6 /* UseReporterFromAnnotations.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59FBD4F758900FDBB99AA5978321D339 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29A40B5439D1DCBFCC2C81A2A7F4791F /* Pods-Trivia-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC3EBA113A382E65C42E584C3BCBADE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4E0633B502B83F4756DB15B5C7A4F7E /* Pods-TriviaTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		90402E20440DFEB140AA079C20094025 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ApprovalTests_Swift;
+			target = 110826A19F098D9DDDD3248F8BC4773A /* ApprovalTests_Swift */;
+			targetProxy = C816FE91D86698AB0D3AE7A49A599017 /* PBXContainerItemProxy */;
+		};
+		F8544D68631B69A704E769C3784D4633 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Trivia";
+			target = 676F3B8C2266E2D6BA2E1B68469CA994 /* Pods-Trivia */;
+			targetProxy = 4A84B412B143A473DDF0A291CFE0E2DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		12CA8570FA025E9A894C6C83BCF4B7EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26EE733BF58EF7B8804002C342DC8885 /* ApprovalTests_Swift.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/ApprovalTests_Swift/ApprovalTests_Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ApprovalTests_Swift/ApprovalTests_Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MODULEMAP_FILE = "Target Support Files/ApprovalTests_Swift/ApprovalTests_Swift.modulemap";
+				PRODUCT_MODULE_NAME = ApprovalTests_Swift;
+				PRODUCT_NAME = ApprovalTests_Swift;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		173C7BB349BA7E12D61A4D8A658E0FE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 483B75D7822E81EFDA48CCADD12EEE6F /* Pods-Trivia.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-Trivia/Pods-Trivia-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MODULEMAP_FILE = "Target Support Files/Pods-Trivia/Pods-Trivia.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9382317ED75CFC741F429FC224405042 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		CB70E3A7BA631DCFF85494DACF772EEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDDA551153CB217F4B325F6D2D0AF1A9 /* ApprovalTests_Swift.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/ApprovalTests_Swift/ApprovalTests_Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ApprovalTests_Swift/ApprovalTests_Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MODULEMAP_FILE = "Target Support Files/ApprovalTests_Swift/ApprovalTests_Swift.modulemap";
+				PRODUCT_MODULE_NAME = ApprovalTests_Swift;
+				PRODUCT_NAME = ApprovalTests_Swift;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DE1E328B0F2AB02A02FFD75B85D38E0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A82A79E9BCBB4250D462FD1F0C90FF15 /* Pods-Trivia.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-Trivia/Pods-Trivia-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MODULEMAP_FILE = "Target Support Files/Pods-Trivia/Pods-Trivia.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DFE9E91E389B2F936374B2080B42FB12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 086D484C7390794D0D6B0755B05F304D /* Pods-TriviaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-TriviaTests/Pods-TriviaTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MODULEMAP_FILE = "Target Support Files/Pods-TriviaTests/Pods-TriviaTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E4DEAC9B52796426D2A37E7074A1738D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		E7E649231736EA12F05A779E4AC972BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13DB779F01F8C37E89A7E1BB6A89D388 /* Pods-TriviaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-TriviaTests/Pods-TriviaTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MODULEMAP_FILE = "Target Support Files/Pods-TriviaTests/Pods-TriviaTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17D78094C9A62C508424BC905DF39B0A /* Build configuration list for PBXNativeTarget "Pods-Trivia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE1E328B0F2AB02A02FFD75B85D38E0A /* Debug */,
+				173C7BB349BA7E12D61A4D8A658E0FE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9382317ED75CFC741F429FC224405042 /* Debug */,
+				E4DEAC9B52796426D2A37E7074A1738D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		773B6A4A9B15EA4B465822C97E8576F3 /* Build configuration list for PBXNativeTarget "Pods-TriviaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7E649231736EA12F05A779E4AC972BA /* Debug */,
+				DFE9E91E389B2F936374B2080B42FB12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D36506DE845882D9B25A960076FA8555 /* Build configuration list for PBXNativeTarget "ApprovalTests_Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB70E3A7BA631DCFF85494DACF772EEA /* Debug */,
+				12CA8570FA025E9A894C6C83BCF4B7EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

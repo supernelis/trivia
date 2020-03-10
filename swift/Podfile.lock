@@ -1,0 +1,21 @@
+PODS:
+  - ApprovalTests_Swift (0.0.1)
+
+DEPENDENCIES:
+  - ApprovalTests_Swift (from `https://github.com/approvals/ApprovalTests.Swift.git`)
+
+EXTERNAL SOURCES:
+  ApprovalTests_Swift:
+    :git: https://github.com/approvals/ApprovalTests.Swift.git
+
+CHECKOUT OPTIONS:
+  ApprovalTests_Swift:
+    :commit: 10e6e2c95791cfa83967356ce0f7d2358062add8
+    :git: https://github.com/approvals/ApprovalTests.Swift.git
+
+SPEC CHECKSUMS:
+  ApprovalTests_Swift: 641b76fa315784d3a8a0b5231587de83be3e85ff
+
+PODFILE CHECKSUM: 8808cc60693fc61ff90255595ddc12116306d7c8
+
+COCOAPODS: 1.9.1
