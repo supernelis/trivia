@@ -1,7 +1,7 @@
 {
   "arguments" : [
-    "-project",
-    "Trivia.xcodeproj",
+    "-workspace",
+    "Trivia.xcworkspace",
     "-scheme",
     "Trivia",
     "test"
