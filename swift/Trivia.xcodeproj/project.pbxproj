@@ -25,6 +25,7 @@
 		2D130AC71BCDA4810099E18F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130AC61BCDA4810099E18F /* Game.swift */; };
 		2D130ACF1BCDB7A40099E18F /* TriviaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130ACE1BCDB7A40099E18F /* TriviaTests.swift */; };
 		2D130AD41BCDB9E50099E18F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130AC61BCDA4810099E18F /* Game.swift */; };
+		840A71562417E340000C4F47 /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A71552417E340000C4F47 /* Printer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		2D130AC61BCDA4810099E18F /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		2D130ACC1BCDB7A40099E18F /* TriviaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriviaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D130ACE1BCDB7A40099E18F /* TriviaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaTests.swift; sourceTree = "<group>"; };
+		840A71552417E340000C4F47 /* Printer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				2D130ABF1BCDA46D0099E18F /* main.swift */,
 				2D130AC61BCDA4810099E18F /* Game.swift */,
+				840A71552417E340000C4F47 /* Printer.swift */,
 			);
 			path = Trivia;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840A71562417E340000C4F47 /* Printer.swift in Sources */,
 				2D130AC01BCDA46D0099E18F /* main.swift in Sources */,
 				2D130AC71BCDA4810099E18F /* Game.swift in Sources */,
 			);

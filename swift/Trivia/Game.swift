@@ -22,6 +22,8 @@ public class Game {
     var currentPlayer = 0
     var isGettingOutOfPenaltyBox = false
     
+    private let printer = Printer()
+    
     public  init(){
     	for i in 0..<50 {
 			popQuestions.append("Pop Question \(i)")
@@ -158,7 +160,7 @@ public class Game {
 	}
 	
 	public func wrongAnswer()->Bool{
-		output("Question was incorrectly answered")
+        printer.output("Question was incorrectly answered")
 		print(players[currentPlayer], "was sent to the penalty box")
 		inPenaltyBox[currentPlayer] = true
 		
@@ -171,10 +173,4 @@ public class Game {
     private var didPlayerWin: Bool {
 		return !(purses[currentPlayer] == 6)
 	}
-    
-    public func output(_ outputs: Any...){
-        for output in outputs {
-            print(output)
-        }
-    }
 }
