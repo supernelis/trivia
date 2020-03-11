@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		847BAF722417F13800D12F0C /* Mutation Testing */ = {
+		847BAF792418E97200D12F0C /* Mutation testing */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 847BAF732417F13800D12F0C /* Build configuration list for PBXAggregateTarget "Mutation Testing" */;
+			buildConfigurationList = 847BAF7A2418E97200D12F0C /* Build configuration list for PBXAggregateTarget "Mutation testing" */;
 			buildPhases = (
-				847BAF762417F13F00D12F0C /* ShellScript */,
+				847BAF7D2418E97600D12F0C /* ShellScript */,
 			);
 			dependencies = (
-				847BAF782417F16400D12F0C /* PBXTargetDependency */,
 			);
-			name = "Mutation Testing";
-			productName = "Mutation Testing";
+			name = "Mutation testing";
+			productName = "Mutation testing";
 		};
 /* End PBXAggregateTarget section */
 
@@ -25,21 +24,10 @@
 		2D130AC01BCDA46D0099E18F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130ABF1BCDA46D0099E18F /* main.swift */; };
 		2D130AC71BCDA4810099E18F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130AC61BCDA4810099E18F /* Game.swift */; };
 		2D130ACF1BCDB7A40099E18F /* TriviaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130ACE1BCDB7A40099E18F /* TriviaTests.swift */; };
-		2D130AD41BCDB9E50099E18F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130AC61BCDA4810099E18F /* Game.swift */; };
 		80C258C643E9FFDDDAD28F51 /* Pods_TriviaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638BF8E9D94778F20520AF4D /* Pods_TriviaTests.framework */; };
 		840A71562417E340000C4F47 /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A71552417E340000C4F47 /* Printer.swift */; };
 		C0921D6F1710944AE4CFDE36 /* Pods_Trivia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12C32D9F5ED6070AB83D53A /* Pods_Trivia.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		847BAF772417F16400D12F0C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2D130AB41BCDA46D0099E18F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2D130ABB1BCDA46D0099E18F;
-			remoteInfo = Trivia;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		2D130ABA1BCDA46D0099E18F /* CopyFiles */ = {
@@ -204,7 +192,7 @@
 						CreatedOnToolsVersion = 7.1;
 						LastSwiftMigration = 1000;
 					};
-					847BAF722417F13800D12F0C = {
+					847BAF792418E97200D12F0C = {
 						CreatedOnToolsVersion = 11.3.1;
 						ProvisioningStyle = Automatic;
 					};
@@ -225,7 +213,7 @@
 			targets = (
 				2D130ABB1BCDA46D0099E18F /* Trivia */,
 				2D130ACB1BCDB7A40099E18F /* TriviaTests */,
-				847BAF722417F13800D12F0C /* Mutation Testing */,
+				847BAF792418E97200D12F0C /* Mutation testing */,
 			);
 		};
 /* End PBXProject section */
@@ -263,7 +251,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		847BAF762417F13F00D12F0C /* ShellScript */ = {
+		847BAF7D2418E97600D12F0C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -338,19 +326,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D130ACF1BCDB7A40099E18F /* TriviaTests.swift in Sources */,
-				2D130AD41BCDB9E50099E18F /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		847BAF782417F16400D12F0C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2D130ABB1BCDA46D0099E18F /* Trivia */;
-			targetProxy = 847BAF772417F16400D12F0C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2D130AC11BCDA46D0099E18F /* Debug */ = {
@@ -498,7 +477,7 @@
 			};
 			name = Release;
 		};
-		847BAF742417F13800D12F0C /* Debug */ = {
+		847BAF7B2418E97200D12F0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -506,7 +485,7 @@
 			};
 			name = Debug;
 		};
-		847BAF752417F13800D12F0C /* Release */ = {
+		847BAF7C2418E97200D12F0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -544,11 +523,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		847BAF732417F13800D12F0C /* Build configuration list for PBXAggregateTarget "Mutation Testing" */ = {
+		847BAF7A2418E97200D12F0C /* Build configuration list for PBXAggregateTarget "Mutation testing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				847BAF742417F13800D12F0C /* Debug */,
-				847BAF752417F13800D12F0C /* Release */,
+				847BAF7B2418E97200D12F0C /* Debug */,
+				847BAF7C2418E97200D12F0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
