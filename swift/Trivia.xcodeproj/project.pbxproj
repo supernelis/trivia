@@ -26,6 +26,7 @@
 		0BAF0E7324990C2900315CC3 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF0E7224990C2900315CC3 /* RandomGenerator.swift */; };
 		0BAF0E7424990DAF00315CC3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130ABF1BCDA46D0099E18F /* main.swift */; };
 		0BAF0E7524990DB800315CC3 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF0E7224990C2900315CC3 /* RandomGenerator.swift */; };
+		0BAF0E77249919B300315CC3 /* GoldMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF0E76249919B300315CC3 /* GoldMaster.swift */; };
 		2D130AC01BCDA46D0099E18F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130ABF1BCDA46D0099E18F /* main.swift */; };
 		2D130AC71BCDA4810099E18F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130AC61BCDA4810099E18F /* Game.swift */; };
 		2D130ACF1BCDB7A40099E18F /* TriviaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130ACE1BCDB7A40099E18F /* TriviaTests.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		0BAF0E7224990C2900315CC3 /* RandomGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerator.swift; sourceTree = "<group>"; };
+		0BAF0E76249919B300315CC3 /* GoldMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldMaster.swift; sourceTree = "<group>"; };
 		2D130ABC1BCDA46D0099E18F /* Trivia */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Trivia; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D130ABF1BCDA46D0099E18F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2D130AC61BCDA4810099E18F /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				2D130ACE1BCDB7A40099E18F /* TriviaTests.swift */,
+				0BAF0E76249919B300315CC3 /* GoldMaster.swift */,
 			);
 			path = TriviaTests;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				0BAF0E7524990DB800315CC3 /* RandomGenerator.swift in Sources */,
 				0BAF0E7424990DAF00315CC3 /* main.swift in Sources */,
 				0BAF0E71249906D300315CC3 /* ConsolePrinter.swift in Sources */,
+				0BAF0E77249919B300315CC3 /* GoldMaster.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
