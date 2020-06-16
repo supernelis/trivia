@@ -8,13 +8,12 @@
 
 import Foundation
 
-let random = RandomGenerator()
-
-func play() {
+func play(
+    random: RandomGenerator = RandomGenerator(),
+    aGame: Game = Game()
+) {
     var notAWinner: Bool
-    
-    let aGame = Game()
-    
+
     _ = aGame.add(playerName: "Chet")
     _ = aGame.add(playerName: "Pat")
     _ = aGame.add(playerName: "Sue")

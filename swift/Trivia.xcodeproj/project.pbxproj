@@ -24,6 +24,8 @@
 		0BAF0E70249906CD00315CC3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130AC61BCDA4810099E18F /* Game.swift */; };
 		0BAF0E71249906D300315CC3 /* ConsolePrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A71552417E340000C4F47 /* ConsolePrinter.swift */; };
 		0BAF0E7324990C2900315CC3 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF0E7224990C2900315CC3 /* RandomGenerator.swift */; };
+		0BAF0E7424990DAF00315CC3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130ABF1BCDA46D0099E18F /* main.swift */; };
+		0BAF0E7524990DB800315CC3 /* RandomGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF0E7224990C2900315CC3 /* RandomGenerator.swift */; };
 		2D130AC01BCDA46D0099E18F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130ABF1BCDA46D0099E18F /* main.swift */; };
 		2D130AC71BCDA4810099E18F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130AC61BCDA4810099E18F /* Game.swift */; };
 		2D130ACF1BCDB7A40099E18F /* TriviaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130ACE1BCDB7A40099E18F /* TriviaTests.swift */; };
@@ -333,6 +335,8 @@
 			files = (
 				2D130ACF1BCDB7A40099E18F /* TriviaTests.swift in Sources */,
 				0BAF0E70249906CD00315CC3 /* Game.swift in Sources */,
+				0BAF0E7524990DB800315CC3 /* RandomGenerator.swift in Sources */,
+				0BAF0E7424990DAF00315CC3 /* main.swift in Sources */,
 				0BAF0E71249906D300315CC3 /* ConsolePrinter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
