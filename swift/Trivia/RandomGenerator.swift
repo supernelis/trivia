@@ -1,7 +1,11 @@
 import Foundation
 
-class RandomGenerator {
-    func number() -> Int {
-        Int(arc4random_uniform(5)) + 1
+protocol RandomGenerator {
+    func number(from: Int, until: Int) -> Int
+}
+
+class RealRandomGenerator: RandomGenerator {
+    func number(from: Int = 0, until: Int) -> Int {
+        Int.random(in: from ..< until)
     }
 }

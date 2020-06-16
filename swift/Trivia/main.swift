@@ -9,7 +9,7 @@
 import Foundation
 
 func play(
-    random: RandomGenerator = RandomGenerator(),
+    random: RandomGenerator = RealRandomGenerator(),
     aGame: Game = Game()
 ) {
     var notAWinner: Bool
@@ -20,15 +20,13 @@ func play(
     
     repeat {
         
-        aGame.roll(roll: random.number())
+        aGame.roll(roll: random.number(from: 1, until: 5))
         
-        if (Int(arc4random_uniform(9)) == 7) {
+        if (Int(random.number(from: 0, until: 9)) == 7) {
             notAWinner = aGame.wrongAnswer()
         } else {
             notAWinner = aGame.wasCorrectlyAnswered()
         }
-        
-        
         
     } while (notAWinner)
     
