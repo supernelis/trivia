@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D130ABB1BCDA46D0099E18F"
-               BuildableName = "Trivia"
-               BlueprintName = "Trivia"
+               BlueprintIdentifier = "847BAF792418E97200D12F0C"
+               BuildableName = "Mutation testing"
+               BlueprintName = "Mutation testing"
                ReferencedContainer = "container:Trivia.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2D130ACB1BCDB7A40099E18F"
-               BuildableName = "TriviaTests.xctest"
-               BlueprintName = "TriviaTests"
-               ReferencedContainer = "container:Trivia.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -60,9 +50,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D130ABB1BCDA46D0099E18F"
-            BuildableName = "Trivia"
-            BlueprintName = "Trivia"
+            BlueprintIdentifier = "847BAF792418E97200D12F0C"
+            BuildableName = "Mutation testing"
+            BlueprintName = "Mutation testing"
             ReferencedContainer = "container:Trivia.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

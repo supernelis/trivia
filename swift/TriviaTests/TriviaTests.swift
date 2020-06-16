@@ -1,29 +1,8 @@
-//
-//  TriviaTests.swift
-//  TriviaTests
-//
-//  Created by Oliver Eikemeier on 14.10.15.
-//  Copyright © 2015 Legacy Coderetreat. All rights reserved.
-//
-
 import XCTest
-@testable import Trivia
 
 class TriviaTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_NotNil() {
+        XCTAssertNotNil(Game())
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
 }
