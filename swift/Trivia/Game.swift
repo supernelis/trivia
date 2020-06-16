@@ -22,7 +22,7 @@ public class Game {
     var currentPlayer = 0
     var isGettingOutOfPenaltyBox = false
     
-    private var printer = Printer()
+    private var printer: Printer = ConsolePrinter()
     
     public convenience init(printer: Printer){
         self.init()

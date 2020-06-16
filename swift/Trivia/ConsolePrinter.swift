@@ -6,7 +6,11 @@
 //  Copyright © 2020 Legacy Coderetreat. All rights reserved.
 //
 
-public class Printer {
+public protocol Printer {
+    func output(_ items: CustomStringConvertible...)
+}
+
+public class ConsolePrinter: Printer {
     public func output(_ items: CustomStringConvertible...){
         print(items.map{$0.description}.joined(separator: " "))
     }

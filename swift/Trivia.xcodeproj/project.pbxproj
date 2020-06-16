@@ -25,7 +25,7 @@
 		2D130AC71BCDA4810099E18F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130AC61BCDA4810099E18F /* Game.swift */; };
 		2D130ACF1BCDB7A40099E18F /* TriviaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D130ACE1BCDB7A40099E18F /* TriviaTests.swift */; };
 		80C258C643E9FFDDDAD28F51 /* Pods_TriviaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638BF8E9D94778F20520AF4D /* Pods_TriviaTests.framework */; };
-		840A71562417E340000C4F47 /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A71552417E340000C4F47 /* Printer.swift */; };
+		840A71562417E340000C4F47 /* ConsolePrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A71552417E340000C4F47 /* ConsolePrinter.swift */; };
 		C0921D6F1710944AE4CFDE36 /* Pods_Trivia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12C32D9F5ED6070AB83D53A /* Pods_Trivia.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +50,7 @@
 		56F4E03EA1F608F74D7FED9F /* Pods-Trivia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trivia.release.xcconfig"; path = "Target Support Files/Pods-Trivia/Pods-Trivia.release.xcconfig"; sourceTree = "<group>"; };
 		638BF8E9D94778F20520AF4D /* Pods_TriviaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TriviaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F6277E57EE4A0091103052 /* Pods-Trivia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trivia.debug.xcconfig"; path = "Target Support Files/Pods-Trivia/Pods-Trivia.debug.xcconfig"; sourceTree = "<group>"; };
-		840A71552417E340000C4F47 /* Printer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
+		840A71552417E340000C4F47 /* ConsolePrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolePrinter.swift; sourceTree = "<group>"; };
 		A10D1E680CACE4B6C7B8642F /* Pods-TriviaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriviaTests.release.xcconfig"; path = "Target Support Files/Pods-TriviaTests/Pods-TriviaTests.release.xcconfig"; sourceTree = "<group>"; };
 		B12C32D9F5ED6070AB83D53A /* Pods_Trivia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trivia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18396C9FB80F6DF77EE378C /* Pods-TriviaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TriviaTests.debug.xcconfig"; path = "Target Support Files/Pods-TriviaTests/Pods-TriviaTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			children = (
 				2D130ABF1BCDA46D0099E18F /* main.swift */,
 				2D130AC61BCDA4810099E18F /* Game.swift */,
-				840A71552417E340000C4F47 /* Printer.swift */,
+				840A71552417E340000C4F47 /* ConsolePrinter.swift */,
 			);
 			path = Trivia;
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				840A71562417E340000C4F47 /* Printer.swift in Sources */,
+				840A71562417E340000C4F47 /* ConsolePrinter.swift in Sources */,
 				2D130AC01BCDA46D0099E18F /* main.swift in Sources */,
 				2D130AC71BCDA4810099E18F /* Game.swift in Sources */,
 			);
