@@ -1,11 +1,3 @@
-//
-//  Game.swift
-//  Trivia
-//
-//  Created by Oliver Eikemeier on 13.10.15.
-//  Copyright © 2015 Legacy Coderetreat. All rights reserved.
-//
-
 import Foundation
 
 public class Game {
@@ -40,10 +32,6 @@ public class Game {
 
     public func createRockQuestion(index: Int) -> String{
 		return "Rock Question \(index)"
-	}
-	
-	public func isPlayable() -> Bool {
-		return howManyPlayers() >= 2
 	}
 
     public func add(playerName: String) -> Bool {
