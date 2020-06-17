@@ -8,15 +8,41 @@ class TriviaTests: XCTestCase {
         XCTAssertNotNil(Game())
     }
     
-    func test_runGame() throws {
+    func test_runGame_with_GoldenMaster() {
         let random = MockRandomGenerator()
         let printer = StringPrinter()
         let game = Game(printer: printer)
         
         play(random: random, aGame: game)
         
-        //XCTAssertEqual(GoldenMaster.output, printer.text)
+        XCTAssertEqual(GoldenMaster.output, printer.text)
+    }
+    
+    func test_runGame_with_approvals() throws {
+        let random = MockRandomGenerator()
+        let printer = StringPrinter()
+        let game = Game(printer: printer)
+        
+        play(random: random, aGame: game)
+        
         try Approvals.verify(printer.text)
+    }
+    
+    func test_runGame_with_CombinationApprovals() throws {
+        let players = [ ["Nelis","Angel","Tim"], ["Nelis","Angel"], ["Angel","Nelis"], ["Nelis"] ]
+        
+        try CombinationApprovals.verifyAllCombinations(runTestsWithPlayers, players)
+    }
+    
+    
+    private func runTestsWithPlayers(_ players: [String]) -> String {
+        let random = MockRandomGenerator()
+        let printer = StringPrinter()
+        let game = Game(printer: printer)
+        
+        play(players: players, random: random, aGame: game)
+        
+        return printer.text
     }
 }
 
@@ -36,7 +62,7 @@ class MockRandomGenerator: RandomGenerator {
     
     func number(from: Int, until: Int) -> Int {
         if( until == 5){
-            return until5List.popLast()!
+            return  until5List.popLast()!
         }
         return until9List.popLast()!
     }

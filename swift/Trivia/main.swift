@@ -9,14 +9,15 @@
 import Foundation
 
 func play(
+    players: [String] = ["Chet","Pat","Sue"],
     random: RandomGenerator = RealRandomGenerator(),
     aGame: Game = Game()
 ) {
     var notAWinner: Bool
 
-    _ = aGame.add(playerName: "Chet")
-    _ = aGame.add(playerName: "Pat")
-    _ = aGame.add(playerName: "Sue")
+    players.forEach { player in
+        _ = aGame.add(playerName: player)
+    }
     
     repeat {
         
