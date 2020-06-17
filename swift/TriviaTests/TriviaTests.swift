@@ -1,4 +1,6 @@
 import XCTest
+@testable import ApprovalTests_Swift
+
 
 class TriviaTests: XCTestCase {
     
@@ -6,14 +8,15 @@ class TriviaTests: XCTestCase {
         XCTAssertNotNil(Game())
     }
     
-    func test_runGame() {
+    func test_runGame() throws {
         let random = MockRandomGenerator()
         let printer = StringPrinter()
         let game = Game(printer: printer)
         
         play(random: random, aGame: game)
         
-        XCTAssertEqual(GoldenMaster.output, printer.text)
+        //XCTAssertEqual(GoldenMaster.output, printer.text)
+        try Approvals.verify(printer.text)
     }
 }
 
